@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Montserrat, Poppins } from "next/font/google";
-import Header from "@/src/components/Header";
-import MenuMobile from "@/src/components/MobileMenu";
+import Header from "@/components/Header";
+//import MenuMobile from "@/src/components/MobileMenu";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -31,7 +31,8 @@ export default function RootLayout({
       <body
         className={`${montserrat.variable} ${poppins.variable} antialiased m-0 p-0 box-border`}
       >
-        <MenuMobile/>
+        {/*<MenuMobile/>*/}
+        <Header />
         <main>
           {children}
         </main>

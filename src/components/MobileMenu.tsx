@@ -1,39 +1,10 @@
+'use client'
+
 import Link from "next/link"
 import Icon from "@mdi/react"
+import { Menu } from "@/constants/Menu";
+
 import { mdiClose } from '@mdi/js'
-
-interface MenuItem {
-    name: string,
-    id: string
-}
-
-const menu:MenuItem[] = [
-    {
-        name: 'Inicio',
-        id: 'Inicio'
-    },
-    {
-        name: 'Projetos',
-        id: 'Projetos'
-    },
-    {
-        name: 'Como trabalho',
-        id: 'Como trabalho'
-    },
-    {
-        name: 'Experiência',
-        id: 'Experiência'
-    },
-    {
-        name: 'Sobre',
-        id: 'Sobre'
-    },
-    {
-        name: 'Contato',
-        id: 'Contato'
-    }
-]
-
 
 export default function MenuMobile(){
     return (
@@ -47,7 +18,7 @@ export default function MenuMobile(){
                 />
             </span>
             <ul className="flex flex-col gap-6 text-lg font-normal text-[#1B263B] text-center py-2">
-                {menu.map((item) => {
+                {Menu.map((item) => {
                     return (
                         <li key={item.id}>
                             <Link href={`#${item.id}`}>
