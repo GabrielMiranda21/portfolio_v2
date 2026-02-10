@@ -1,7 +1,7 @@
-import Image from "next/image";
+import Hero from "@/components/Sections/Hero/Hero";
 
 export default function Home() {
   return (
-    <span></span>
+    <Hero />
   );
 }
