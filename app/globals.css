@@ -13,6 +13,7 @@
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --font-size-titulo: 32px;
 }
 
 @media (prefers-color-scheme: dark) {

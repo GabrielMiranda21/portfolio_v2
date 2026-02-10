@@ -1,21 +1,29 @@
-type ButtonVariant = 'cta' | 'primary' | 'secundary' | 'terciary';
+import Icon from "@mdi/react";
+import { IconProps } from "@mdi/react/dist/IconProps";
 
-const button:Record<string, string>  = {
+type ButtonVariantBackgroundColor = 'cta' | 'primary' | 'secundary' | 'terciary' | 'none';
+
+const buttonColors:Record<string, string>  = {
     cta: "bg-[linear-gradient(45deg,#94CCF9,#C7FFD8)]",
-    primary: "#1B263B",
-    secundary: "#3B82F6",
-    terciary: "#10B981"
+    primary: "bg-[#1B263B]",
+    secundary: "bg-[#3B82F6]",
+    terciary: "bg-[#10B981]",
+    none: "bg-[#EDF3FF] border-solid border-[#1B263B]"
 }
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-    variant: ButtonVariant
+    variant: ButtonVariantBackgroundColor
+    icon?: string
+    iconProps?: Partial<IconProps>
 }
 
-export default function Button({variant, children, ...props}: ButtonProps){
+export default function Button({variant, children, icon, iconProps, className, ...props}: ButtonProps){
     return <button
-        className={`${button[variant]}`}
+        className={`font-montserrat font-bold text-center ${buttonColors[variant]} ${className || ""} w-full`}
         {...props}
     >
+        {/*Renderização Condicional*/}
+        {icon && <Icon path={icon} size={1} />}
         {children}
     </button>
 }
