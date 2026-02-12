@@ -9,7 +9,6 @@ interface DetailsModalProps {
     content: string
 }
 
-
 //const infoProject: DetailsModalProps = {}
 
 export default function Modal(){

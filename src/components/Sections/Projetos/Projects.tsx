@@ -15,14 +15,14 @@ export default function Project(){
                     <Button
                         onClick={() => setActiveTab('web')}
                         variant={activeTab === 'web' ? 'primary' : 'none'}
-                        className="flex justify-center items-center text-xl font-normal rounded-l-lg px-6 py-2"
+                        className="flex justify-center items-center text-xl font-medium rounded-l-lg px-6 py-2"
                     >
                         Web
                     </Button>
                     <Button
                         onClick={() => setActiveTab('design')}
                         variant={activeTab === 'design' ? 'primary' : 'none'}
-                        className="flex justify-center items-center text-xl font-normal rounded-r-lg w-auto px-6 py-2"
+                        className="flex justify-center items-center text-xl font-medium rounded-r-lg w-auto px-6 py-2"
                     >
                         Design
                     </Button>

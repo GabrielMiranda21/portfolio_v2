@@ -8,7 +8,7 @@ const buttonColors:Record<string, string>  = {
     primary: "bg-[#1B263B]",
     secundary: "bg-[#3B82F6]",
     terciary: "bg-[#10B981]",
-    none: "bg-[#EDF3FF] border-solid border-[#1B263B]"
+    none: "bg-[#EDF3FF] border-solid border border-[#1B263B] text-[#1B263B]"
 }
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
