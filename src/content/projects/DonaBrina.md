@@ -1,7 +1,8 @@
 ---
 title: 'Confeitaria Dona Brina'
+description: 'Projeto focado em personalização de pedidos e fluxo via WhatsApp.'
 tags: ['Figma', 'UX/UI', 'Design System', 'Web design', 'User Flows']
-thumbnail: '/images/brina.png'
+img: '/images/brina.png'
 type: 'Design'
 ---
 

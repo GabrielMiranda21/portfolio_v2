@@ -1,7 +1,8 @@
 ---
 title: 'nomeDoProjeto'
+description: 'projeto bunito'
 tags: ['tecnologia', 'ouConceitoAplicado']
-thumbnail: '/images/caminhoDaImagem.extensao'
+img: '/images/caminhoDaImagem.extensao'
 type: 'tipo'
 ---
 

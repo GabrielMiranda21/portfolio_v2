@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 
-const filesText = () => {
+export const filesText = () => {
     const projectFolder = path.join(process.cwd(), 'src', 'content', 'projects');
     const files: string[] = fs.readdirSync(projectFolder);
     const newFile = files.map((file) => { 
@@ -13,5 +13,3 @@ const filesText = () => {
 
     return newFile
 }
-
-console.log(filesText())

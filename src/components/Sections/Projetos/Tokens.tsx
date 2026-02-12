@@ -1,5 +1,5 @@
 interface TextToken {
-    children: string
+    children: string[]
 }
 
 export default function Token({children}: TextToken){
