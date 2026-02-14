@@ -1,9 +1,9 @@
 ---
-title: 'Confeitaria Dona Brina'
-description: 'Projeto focado em personalização de pedidos e fluxo via WhatsApp.'
-tags: ['Figma', 'UX/UI', 'User Flows', 'Design System', 'Web design']
-img: '/assets/donabrina.png'
-type: 'Design'
+title: 'Direito Direto'
+description: 'Uma plataforma que facilita a busca por profissionais capacitados da área de direito'
+tags: ['Php', 'Css', 'Javascript', 'Laragon', 'MySql']
+img: '/assets/direitodireto.png'
+type: 'Web'
 ---
 
 # Sobre

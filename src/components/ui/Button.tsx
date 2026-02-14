@@ -1,13 +1,15 @@
 import Icon from "@mdi/react";
 import { IconProps } from "@mdi/react/dist/IconProps";
 
-type ButtonVariantBackgroundColor = 'cta' | 'primary' | 'secundary' | 'terciary' | 'none';
+type ButtonVariantBackgroundColor = 'cta' | 'primary' | 'secundary' | 'terciary' | 'brand' | 'black' | 'none';
 
 const buttonColors:Record<string, string>  = {
     cta: "bg-[linear-gradient(45deg,#94CCF9,#C7FFD8)]",
     primary: "bg-[#1B263B]",
     secundary: "bg-[#3B82F6]",
     terciary: "bg-[#10B981]",
+    brand: "bg-[#4361EE]",
+    black: "bg-[#000000]",
     none: "bg-[#EDF3FF] border-solid border border-[#1B263B] text-[#1B263B]"
 }
 

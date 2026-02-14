@@ -1,7 +1,7 @@
 ---
-title: 'Confeitaria Dona Brina'
-description: 'Projeto focado em personalização de pedidos e fluxo via WhatsApp.'
-tags: ['Figma', 'UX/UI', 'User Flows', 'Design System', 'Web design']
+title: 'Restaurante do chefe'
+description: 'Projeto estático para treinar teoria'
+tags: ['Figma', 'UI', 'Design System', 'Web design']
 img: '/assets/donabrina.png'
 type: 'Design'
 ---

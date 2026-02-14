@@ -1,9 +1,9 @@
 ---
-title: 'Confeitaria Dona Brina'
-description: 'Projeto focado em personalização de pedidos e fluxo via WhatsApp.'
-tags: ['Figma', 'UX/UI', 'User Flows', 'Design System', 'Web design']
-img: '/assets/donabrina.png'
-type: 'Design'
+title: 'Setup Gamer'
+description: 'E-commerce de venda de cpus'
+tags: ['Ejs', 'Css', 'JavaScript', 'NodeJs', 'MySql', 'Express', 'Mvc']
+img: '/assets/setupgamer.png'
+type: 'Web'
 ---
 
 # Sobre
