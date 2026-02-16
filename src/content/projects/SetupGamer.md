@@ -6,28 +6,23 @@ img: '/assets/setupgamer.png'
 type: 'Web'
 ---
 
-# Sobre
-Uma cliente estava iniciando um negócio de confeitaria artesanal, com foco em bolos personalizados, brigadeiros tradicionais e encomendas para eventos e festas.
-A principal necessidade era permitir que clientes montassem seus pedidos de forma simples, personalizada e sem depender de um e-commerce tradicional.
+Projeto realizado para a entrega final do curso Web Full Stack nodeJs pela instituição Digital House
 
 # Objetivo do projeto
-Criar a experiência de um site onde o usuário pudesse:
-    - Selecionar produtos
-    - Personalizar ingredientes
-    - Adicionar observações
-    - Finalizar o pedido via WhatsApp
-Ao mesmo tempo, o sistema deveria registrar os pedidos em um CMS para controle interno.
+Criar um e-commerce de venda de cpu's
+    - Selecionar produto 
+    - Personalizar peças
+    - Finalizar a compra
 
 # Meu papel no projeto
-Atuei como Product Designer, sendo responsável por:
-    - Mapeamento do fluxo de pedidos
-    - Definição das regras de negócio
+Atuei como Desenvolvedor Full Stack realizando:
     - Criação das telas no Figma
-    - Documentação das interações e estados
-O desenvolvimento do CMS não fez parte do escopo do projeto.
+    - Desenvolvimento da estrutura e estilização da página
+    - Diagramação do banco de dados
+    - Trafego de dados via localStorage
 
 # Entendimento do problema
-Um dos principais desafios era permitir a personalização dos produtos sem tornar o processo de compra complexo. Além disso, a cliente precisava de uma solução prática, já que o WhatsApp era o principal canal de comunicação com os clientes.
+O desafio inicial consistia no trabalho em equipe por conta dos niveis diferente que cada membro se encontrava: Iniciantes e Intermediários, definir o projeto e estabelecer tarefas para cada membro da equipe. O modelo de trabalho utilizado pelo curso era Agile Scrum, tinhamos de compreender em como conectar os dados e tornar o código dinâmico para fácil compreensão aplicando Clean Code focado na arquitetura MVC.
 
 # Solução proposta
 A solução foi desenhar um fluxo de pedidos onde: O usuário escolhe os produtos pelo cardápio Personaliza ingredientes e quantidades Adiciona observações específicas Finaliza o pedido, que é enviado automaticamente via WhatsApp Paralelamente, uma requisição registra o pedido em um CMS para organização interna.

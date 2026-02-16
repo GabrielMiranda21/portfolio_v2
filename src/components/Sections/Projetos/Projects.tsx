@@ -5,14 +5,14 @@ import Button from "@/components/UI/Button"
 import { ProjectProps } from "@/lib/projects"
 import { useState } from "react"
 
-interface ProjectSectionProps {
+export interface ProjectSectionProps {
   initialProjects: ProjectProps[]
 }
 
 export default function Project({ initialProjects }: ProjectSectionProps ){
     const [activeTab, setActiveTab] = useState<'Web' | 'Design'>('Web');
     
-    return (
+    return (    
         <section className="flex flex-col justify-center gap-6 bg-[#EDF3FF] py-18 px-6 transform-gpu backface-hidden">
             <h3 className="font-black text-[32px] text-center text-[#1B263B]">Projetos em destaque</h3>
 

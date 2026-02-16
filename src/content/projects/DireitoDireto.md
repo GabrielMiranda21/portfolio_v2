@@ -6,7 +6,6 @@ img: '/assets/direitodireto.png'
 type: 'Web'
 ---
 
-# Sobre
 Uma cliente estava iniciando um negócio de confeitaria artesanal, com foco em bolos personalizados, brigadeiros tradicionais e encomendas para eventos e festas.
 A principal necessidade era permitir que clientes montassem seus pedidos de forma simples, personalizada e sem depender de um e-commerce tradicional.
 

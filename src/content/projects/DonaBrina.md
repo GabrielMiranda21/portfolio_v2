@@ -6,24 +6,23 @@ img: '/assets/donabrina.png'
 type: 'Design'
 ---
 
-# Sobre
 Uma cliente estava iniciando um negócio de confeitaria artesanal, com foco em bolos personalizados, brigadeiros tradicionais e encomendas para eventos e festas.
 A principal necessidade era permitir que clientes montassem seus pedidos de forma simples, personalizada e sem depender de um e-commerce tradicional.
 
 # Objetivo do projeto
 Criar a experiência de um site onde o usuário pudesse:
-    - Selecionar produtos
-    - Personalizar ingredientes
-    - Adicionar observações
-    - Finalizar o pedido via WhatsApp
+- Selecionar produtos
+- Personalizar ingredientes
+- Adicionar observações
+- Finalizar o pedido via WhatsApp /n
 Ao mesmo tempo, o sistema deveria registrar os pedidos em um CMS para controle interno.
 
 # Meu papel no projeto
 Atuei como Product Designer, sendo responsável por:
-    - Mapeamento do fluxo de pedidos
-    - Definição das regras de negócio
-    - Criação das telas no Figma
-    - Documentação das interações e estados
+- Mapeamento do fluxo de pedidos
+- Definição das regras de negócio
+- Criação das telas no Figma
+- Documentação das interações e estados
 O desenvolvimento do CMS não fez parte do escopo do projeto.
 
 # Entendimento do problema

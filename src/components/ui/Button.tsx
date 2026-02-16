@@ -21,7 +21,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 
 export default function Button({variant, children, icon, iconProps, className, ...props}: ButtonProps){
     return <button
-        className={`font-montserrat font-bold text-center ${buttonColors[variant]} ${className || ""}`}
+        className={`font-montserrat font-bold text-center hover:opacity-90 transition-opacity cursor-pointer ${buttonColors[variant]} ${className || ""}`}
         {...props}
     >
         {/*Renderização Condicional*/}
