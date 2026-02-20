@@ -19,8 +19,8 @@ const responsiveCard = 'min-w-[280px] md:w-[300px] lg:w-[320px]'
 
 // Lembresse que na desestruturação você cria uma váriavel que recebe os dados 'project'[variavel] recebe um objeto project com chaves da interface ProjectProps
 export default function Card({project}:{ project: ProjectProps}){ 
-    const [ isOpen, setIsOpen ] = useState(false);
     const dialogRef = useRef<HTMLDialogElement>(null);
+    const [ isOpen, setIsOpen ] = useState(false);
     const openModal = () => { 
         dialogRef.current?.showModal() 
         setIsOpen(true) 
@@ -30,25 +30,34 @@ export default function Card({project}:{ project: ProjectProps}){
         setIsOpen(false)
         document.body.style.overflow = 'unset'; // Força a liberação do scroll
     };
+
+    useEffect(() => { // Serve para efeitos externos do site. 3 parametros: Estado, função de limpeza(Opcional) e monitoramento de estado
+        if (isOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+        return () => { document.body.style.overflow = 'unset'; };
+    }, [isOpen]);
     
     
 
     return (
         <article className={`flex flex-col ${responsiveCard} snap-center h-[560px] pb-6 gap-4 rounded-xl bg-white`}>
-            <dialog ref={dialogRef} onClose={closeModal} className="fixed inset-0 m-auto rounded-3xl max-w-2xl w-[90vw] max-h-[80vh] backdrop:bg-black/60 shadow-2xl border-none">
-                <div className="flex flex-col bg-white h-full max-h-[80vh] overflow-y-auto p-4 md:p-8 gap-3">
+            <dialog ref={dialogRef} onClose={closeModal} className="fixed inset-0 m-auto rounded-3xl max-w-2xl w-[90vw] max-h-[80vh] backdrop:bg-black/60 shadow-2xl border-none p-0 overflow-hidden">
+                <div className="flex flex-col bg-white h-full max-h-[80vh] overflow-y-auto p-4 md:p-12 gap-3">
                     <div className="flex justify-between items-center w-full">
                         <strong className="font-black text-3xl text-[#1B263B]">Sobre</strong>
                         <button onClick={closeModal} className="cursor-pointer">
                             <Icon path={mdiClose} size={1.5} color={"#5E6472"}></Icon>
                         </button>
                     </div>
-                    <div className="prose prose-slate max-w-none">
+                    <div className="prose prose-slate max-w-none pb-4">
                         <ReactMarkDown remarkPlugins={[remarkGfm]}  components={{
-                            h1: ({ node, ...props }) => <h2 {...props} className="font-montserrat font-bold text-lg text-[#1B263B] pt-6"/>,
-                            p: ({ node, ...props }) => <p {...props} className="font-poppins font-normal text-md text-[#5E6472]"/>,
-                            ul: ({node, ...props}) => <ul className="font-poppins list-disc list-outside mb-4 text-[#5E6472]" {...props} />,
-                            li: ({node, ...props}) => (<li className="ml-4 marker:text-[#5E6472]" {...props}>{props.children}</li>)
+                            h1: ({ node, ...props }) => <h2 {...props} className="font-montserrat font-bold text-xl text-[#1B263B] mt-6"/>,
+                            p: ({ node, ...props }) => <p {...props} className="font-poppins font-normal text-md text-[#5E6472] leading-relaxed"/>,
+                            ul: ({node, ...props}) => <ul className="list-disc list-outside pl-6 flex flex-col text-[#5E6472]" {...props} />,
+                            li: ({node, ...props}) => <li className="font-poppins marker:text-[#1B263B]" {...props} />
                         }}> 
                             {project.content}
                         </ReactMarkDown>
@@ -105,4 +114,3 @@ export default function Card({project}:{ project: ProjectProps}){
         </article>
     )
 }
-// Para o projeto ser exibido é necessário enviar as propriedades dos arquivos .md

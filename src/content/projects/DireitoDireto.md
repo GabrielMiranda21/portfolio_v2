@@ -6,27 +6,25 @@ img: '/assets/direitodireto.png'
 type: 'Web'
 ---
 
-Uma cliente estava iniciando um negócio de confeitaria artesanal, com foco em bolos personalizados, brigadeiros tradicionais e encomendas para eventos e festas.
-A principal necessidade era permitir que clientes montassem seus pedidos de forma simples, personalizada e sem depender de um e-commerce tradicional.
+Neste projeto o foco principal para desenvolver o projeto integrador ACCEX a proposta era um site onde pessoas pudessem buscar advogados capacitados para serem contratados e ao mesmo tempo para aqueles que estivessem iniciando a carreira pudessem ter a chance de conseguir seus primeiros clientes.
 
 # Objetivo do projeto
 Criar a experiência de um site onde o usuário pudesse:
-    - Selecionar produtos
-    - Personalizar ingredientes
-    - Adicionar observações
-    - Finalizar o pedido via WhatsApp
-Ao mesmo tempo, o sistema deveria registrar os pedidos em um CMS para controle interno.
+- Filtrar advogados (Cliente)
+- Sistema de avaliações
+- Entrar em contato
+- CRUD (Perfil advogado)
+- Monitorar o andamento do processo em tempo real
 
 # Meu papel no projeto
-Atuei como Product Designer, sendo responsável por:
-    - Mapeamento do fluxo de pedidos
-    - Definição das regras de negócio
-    - Criação das telas no Figma
-    - Documentação das interações e estados
-O desenvolvimento do CMS não fez parte do escopo do projeto.
+Atuei como Product Designer e Desenvolvedor Front-end, sendo responsável por:
+- Mapeamento do fluxo do cliente na plataforma
+- Definição das regras de negócio
+- Criação das telas no Figma
+- Desenvolvimento das telas
 
 # Entendimento do problema
-Um dos principais desafios era permitir a personalização dos produtos sem tornar o processo de compra complexo. Além disso, a cliente precisava de uma solução prática, já que o WhatsApp era o principal canal de comunicação com os clientes.
+Um dos principais desafios era a definição de requisitos para página, visto que era um projeto que demava muito tempo e exploração de novas ferramentas. O principal foco era conectar o banco de dados e tornar a busca intuitiva para o usuário final.
 
 # Solução proposta
 A solução foi desenhar um fluxo de pedidos onde: O usuário escolhe os produtos pelo cardápio Personaliza ingredientes e quantidades Adiciona observações específicas Finaliza o pedido, que é enviado automaticamente via WhatsApp Paralelamente, uma requisição registra o pedido em um CMS para organização interna.
@@ -34,7 +32,7 @@ A solução foi desenhar um fluxo de pedidos onde: O usuário escolhe os produto
 # Fluxos e telas desenvolvidas
 Foram desenvolvidas telas para: Página inicial com apresentação da marca Cardápio com categorias e filtros Detalhes do pedido e personalização Acompanhamento de pedidos Área do usuário Seção de eventos e festas Todas as telas foram criadas no Figma e documentadas para facilitar a implementação.
 
-# alidação com a cliente
+# Validação com a cliente
 As telas foram apresentadas à cliente, que validou a proposta visual e os fluxos definidos, aprovando a solução como base para o desenvolvimento futuro.
 
 # Aprendizados
