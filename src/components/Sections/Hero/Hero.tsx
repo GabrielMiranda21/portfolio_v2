@@ -1,7 +1,7 @@
 'use client'
 
 import Button from "@/components/UI/Button";
-import Photo from "./Photo";
+import Link from "next/link";
 import { mdiTrayArrowDown } from "@mdi/js";
 import Icon from "@mdi/react";
 
@@ -50,10 +50,17 @@ export default function Hero() {
                     >
                         Ver projetos
                     </Button>
-                    <Button variant="primary" className="w-full flex justify-center items-center gap-2 text-white py-4 px-6 whitespace-normal max-w-71 rounded-xl">
-                        <Icon path={mdiTrayArrowDown} size={1} />
-                        Curriculo
-                    </Button>
+                    
+                    <Link href="/gabrielmiranda_curriculo.pdf" download="gabrielmiranda_curriculo.pdf" className="w-full flex justify-center md:justify-start lg:justify-start">
+                        <Button 
+                            type="submit" 
+                            variant="primary" 
+                            className="flex justify-center items-center gap-2 text-white py-4 px-6 whitespace-normal max-w-71 rounded-xl w-full"
+                        >
+                            <Icon path={mdiTrayArrowDown} size={1} />
+                            Curriculo
+                        </Button>
+                    </Link>
                 </div>
             </div>
         </section>

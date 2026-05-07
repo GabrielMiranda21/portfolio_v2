@@ -1,7 +1,10 @@
+'use client'
+
 import Button from '@/components/UI/Button'
 import Icon from '@mdi/react'
 import { mdiLinkedin, mdiTrayArrowDown } from '@mdi/js'
 import { GraduationCap } from 'lucide-react'
+import Link from "next/link";
 import Image from 'next/image'
 import Photo from '../Hero/Photo'
 
@@ -41,7 +44,14 @@ const dataAcademic: Academic[] = [
         university: "Digital House",
         date: "(09/2021 - 04/2022)",
         description: "Desenvolvimento de aplicações completas com Figma, NodeJs, Banco de Dados e Deployment seguindo praticas Ágil Scrum.",
-    }
+    },
+    {
+        id: 3,
+        title: "Web Developer",
+        university: "Agile",
+        date: "(05/2015 - 05/2016)",
+        description: "Desenvolvimento de conceitos básicos sobre design como uso do corelDraw e photoshop, animações utilizando o flash e construção de páginas básicas utilizando Html e Css.",
+    },
 ]
 
 const dataProfissional: Profissional[] = [
@@ -167,18 +177,26 @@ export default function Sobremim() {
                 </div>
             </div>
 
-            <h4 className="text-center text-h4 font-bold text-[#1B263B] w-full">Você pode conhecer mais sobre minha trajetória e experiências em:</h4>
+            <div className='flex flex-col gap-4 items-center'>
+                <h4 className="text-center text-h4 font-bold text-[#1B263B] w-full">Você pode conhecer mais sobre minha trajetória e experiências em:</h4>
 
-            <div className="flex flex-col md:flex-row md:justify-center px-6 gap-6 w-full">
-                <Button variant='secundary' className="flex justify-center items-end gap-2 text-[#ffffff] text-lg py-4 px-6 md:w-71 lg:w-71 rounded-xl">
-                    <Icon path={mdiLinkedin} size={1} />
-                    Linkedin
-                </Button>
-                <Button variant='primary' className="flex justify-center items-end gap-2 text-[#ffffff] text-lg py-4 px-6 md:w-71 lg:w-71 rounded-xl">
-                    <Icon path={mdiTrayArrowDown} size={1} />
-                    Curriculo
-                </Button>
+                <div className="flex flex-col md:flex-row md:justify-center lg:flex-row lg:justify-center px-6 gap-6">
+                    <Link href="https://www.linkedin.com/in/gabriel-miranda-363269205/" target="_blank" className='w-full'>
+                        <Button variant='secundary' className="flex justify-center items-center gap-2 text-[#ffffff] w-full text-body-lead font-bold py-4 px-6 max-w-71 rounded-xl">
+                            <Icon path={mdiLinkedin} size={1} />
+                            Linkedin
+                        </Button>
+                    </Link>
+
+                    <Link href="/gabrielmiranda_curriculo.pdf" download="gabrielmiranda_curriculo.pdf" className='w-full'>
+                        <Button variant='primary' className="flex justify-center items-center gap-2 text-[#ffffff] w-full text-body-lead font-bold py-4 px-6 max-w-71 rounded-xl">
+                            <Icon path={mdiTrayArrowDown} size={1} />
+                            Curriculo
+                        </Button>
+                    </Link>
+                </div>
             </div>
+
         </section>
     )
 }

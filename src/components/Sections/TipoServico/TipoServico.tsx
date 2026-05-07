@@ -90,7 +90,7 @@ export default function TipoServico() {
   const [active, setActive] = useState<string | null>(null)
 
   return (
-    <div className="flex flex-col w-full h-[380px] overflow-hidden md:flex-row lg:flex-row">
+    <div className="flex flex-col w-full h-[600px] md:h-[380px] lg:h-[380px] overflow-hidden md:flex-row lg:flex-row">
       {cards.map((card) => (
         <div
           key={card.number}

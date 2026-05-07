@@ -29,7 +29,7 @@ export default function MobileMenuOpen({ onClose }: MobileMenuOpenProps){
                     />
                 </button>
 
-                <ul className="list-none flex flex-col gap-6 mt-12 text-center text-body-default text-[#1B263B]">
+                <ul className="list-none flex flex-col gap-6 mt-12 text-center text-body-lead font-medium text-[#1B263B]">
                     {Menu.map((item) => (
                         <li key={item.id}>
                             <a
