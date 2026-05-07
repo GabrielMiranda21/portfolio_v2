@@ -5,6 +5,11 @@
   --foreground: #171717;
 }
 
+body {
+  font-family: var(--font-montserrat), sans-serif;
+  font-family: var(--font-manrope), sans-serif;
+}
+
 @layer utilities {
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
@@ -21,8 +26,8 @@
 }
 
 @theme {
-  --font-poppins: "Poppins", sans-serif, system-ui;
-  --font-montserrat: "Montserrat", sans-serif, system-ui;
+  --font-manrope: "Manrope", sans-serif;
+  --font-montserrat: "Montserrat", sans-serif;
 
   --animate-marquee-stack-forward: marquee-loop 20s linear infinite;
   --animate-marquee-stack-reverse: marquee-loop 28s linear infinite reverse;
@@ -51,27 +56,27 @@
   /* Body & Labels */
   --text-body-lead: 1.25rem;
   --text-body-lead--line-height: 1.5;
-  --text-body-lead--font-family: var(--font-poppins);
+  --text-body-lead--font-family: var(--font-manrope);
 
   --text-body-default: 1rem;
   --text-body-default--line-height: 1.5;
-  --text-body-default--font-family: var(--font-poppins);
+  --text-body-default--font-family: var(--font-manrope);
 
   --text-body-small: 0.875rem;
   --text-body-small--line-height: 1.5;
-  --text-body-small--font-family: var(--font-poppins);
+  --text-body-small--font-family: var(--font-manrope);
 
   --text-label-overline: 0.875rem;
   --text-label-overline--line-height: 1.5;
-  --text-label-overline--font-family: var(--font-poppins);
+  --text-label-overline--font-family: var(--font-manrope);
 
   --text-label-micro: 0.75rem;
   --text-label-micro--line-height: 1.4;
-  --text-label-micro--font-family: var(--font-poppins);
+  --text-label-micro--font-family: var(--font-manrope);
 
   --text-label-light: 0.75rem;
   --text-label-light--line-height: 1.4;
-  --text-label-light--font-family: var(--font-poppins);
+  --text-label-light--font-family: var(--font-manrope);
 }
 
 @media (max-width: 767px) {
@@ -97,9 +102,15 @@
 html {
   scroll-behavior: smooth;
 }
-
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-montserrat), var(--font-poppins), sans-serif;
+  font-family: var(--font-manrope), sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-montserrat), sans-serif;
 }

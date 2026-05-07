@@ -45,7 +45,6 @@ export default function Hero() {
                     <Button
                         variant='cta'
                         className="w-full text-white py-4 px-6 whitespace-normal max-w-71 rounded-xl"
-                        style={{ background: 'linear-gradient(90deg, #8E24AA, #3949AB)' }}
                         onClick={() => scrollToSection('projetos')}
                     >
                         Ver projetos
