@@ -36,9 +36,9 @@ const Menu:MenuItem[] = [
 
 export default function ComoTrabalho(){
     return (
-        <section id='#ComoTrabalho' className="flex flex-col gap-6 py-28 px-6 bg-[#EBFF77] text-center">
-            <h2 className="font-montserrat text-[2rem] md:text-5xl lg:text-5xl font-black text-[#1B263B]">Como eu trabalho</h2>
-            <p className="font-poppins text-base md:text-lg lg:text-lg font-normal text-[#1B263B]">Busco entender o problema, estruturar a experiência e desenvolver soluções digitais de forma clara e organizada.</p>
+        <section id="comoTrabalho" className="flex flex-col gap-6 py-28 px-6 bg-[#EBFF77] text-center">
+            <h2 className="font-montserrat text-h2 font-black text-[#1B263B]">Como eu trabalho</h2>
+            <p className="font-poppins text-body-default font-normal text-[#1B263B]">Busco entender o problema, estruturar a experiência e desenvolver soluções digitais de forma clara e organizada.</p>
             <div className="grid grid-cols-1 md:grid-cols-2 min-[1300px]:flex min-[1300px]:justify-between gap-6 w-full h-auto">
                 {
                     Menu.map(item => {
@@ -46,8 +46,8 @@ export default function ComoTrabalho(){
                         return (
                             <div key={item.id} className="flex flex-col justify-start items-center gap-2 shadow w-full p-6 bg-white rounded-xl">
                                 <Icon size={96} color="#5E6472" strokeWidth={1.5} />
-                                <strong className="font-montserrat text-lg md:text-xl font-bold text-[#1B263B]">{item.name}</strong>
-                                <p className="font-poppins text-base md:text-lg font-normal text-[#5E6472]">{item.content}</p>
+                                <strong className="font-montserrat text-h4 font-bold text-[#1B263B]">{item.name}</strong>
+                                <p className="font-poppins text-body-default font-normal text-[#5E6472]">{item.content}</p>
                             </div>
                         )
                     })

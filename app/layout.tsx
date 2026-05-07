@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Montserrat, Poppins } from "next/font/google";
 import Header from "@/components/Header/Header";
+// @ts-ignore
 import "./globals.css";
 
 const montserrat = Montserrat({

@@ -4,12 +4,12 @@ import { IconProps } from "@mdi/react/dist/IconProps";
 type ButtonVariantBackgroundColor = 'cta' | 'primary' | 'secundary' | 'terciary' | 'brand' | 'black' | 'none';
 
 const buttonColors:Record<string, string>  = {
-    cta: "bg-[linear-gradient(45deg,#94CCF9,#C7FFD8)]",
-    primary: "bg-[#1B263B]",
-    secundary: "bg-[#3B82F6]",
-    terciary: "bg-[#10B981]",
-    brand: "bg-[#4361EE]",
-    black: "bg-[#000000]",
+    cta: "bg-[linear-gradient(90deg,#8E24AA,#3949AB)] text-[#EDF3FF]",
+    primary: "bg-[#1B263B] text-[#EDF3FF]",
+    secundary: "bg-[#3B82F6] text-[#EDF3FF]",
+    terciary: "bg-[#10B981] text-[#EDF3FF]",
+    brand: "bg-[#4361EE] text-[#EDF3FF]",
+    black: "bg-[#000000] text-[#EDF3FF]",
     none: "bg-[#EDF3FF] border-solid border border-[#1B263B] text-[#1B263B]"
 }
 
@@ -21,7 +21,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 
 export default function Button({variant, children, icon, iconProps, className, ...props}: ButtonProps){
     return <button
-        className={`font-montserrat font-bold text-center hover:opacity-90 transition-opacity cursor-pointer ${buttonColors[variant]} ${className || ""}`}
+        className={`text-body-default font-bold text-center hover:opacity-90 transition-opacity cursor-pointer ${buttonColors[variant]} ${className || ""}`}
         {...props}
     >
         {/*Renderização Condicional*/}

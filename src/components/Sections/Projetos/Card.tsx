@@ -43,7 +43,7 @@ export default function Card({project}:{ project: ProjectProps}){
     
 
     return (
-        <article className={`flex flex-col ${responsiveCard} snap-center h-[560px] pb-6 gap-4 rounded-xl bg-white`}>
+        <article className={`flex flex-col ${responsiveCard} snap-center h-125 pb-6 gap-4 rounded-xl bg-white`}>
             <dialog ref={dialogRef} onClose={closeModal} className="fixed inset-0 m-auto rounded-3xl max-w-2xl w-[90vw] max-h-[80vh] backdrop:bg-black/60 shadow-2xl border-none p-0 overflow-hidden">
                 <div className="flex flex-col bg-white h-full max-h-[80vh] overflow-y-auto p-4 md:p-12 gap-3">
                     <div className="flex justify-between items-center w-full">
@@ -64,19 +64,18 @@ export default function Card({project}:{ project: ProjectProps}){
                     </div>
                 </div>
             </dialog>
-            <div className="relative w-full h-auto">
+            <div className="relative w-full h-60">
                 <Image
                     src={project.data.img}
                     alt="imageProject"
-                    width={326}
-                    height={220}
-                    className="object-cover rounded-t-xl w-full h-[220px]"
+                    fill
+                    className="object-cover rounded-t -xl w-full"
                 />
             </div>
             <section className="flex flex-col justify-between gap-4 px-6 h-full">
                 <div className="flex flex-col justify-start items-start gap-2 flex-wrap flex-1">
-                    <h2 className='font-montserrat font-bold text-lg text-[#1B263B]'>{project.data.title}</h2>
-                    <p className='font-poppins font-normal text-md text-[#5E6472]'>{project.data.description}</p>
+                    <h4 className='font-bold text-h4 text-[#1B263B]'>{project.data.title}</h4>
+                    <p className='font-normal text-body-default text-[#5E6472]'>{project.data.description}</p>
                 </div>
                 <div className="flex flex-col gap-6">
                     <div className="flex flex-wrap gap-2">
@@ -104,7 +103,7 @@ export default function Card({project}:{ project: ProjectProps}){
                                 </Button>
                             )}
                         </div>
-                        <Button variant={'terciary'} className="flex justify-center item-center gap-2 w-full py-2 px-2 rounded-xl" onClick={openModal}>
+                        <Button variant={'terciary'} className="flex justify-center items-center gap-2 w-full py-2 px-2 rounded-xl" onClick={openModal}>
                             <MdOutlinePageview  size={24} color="#EDF3FF"/>
                             Ver detalhes
                         </Button>

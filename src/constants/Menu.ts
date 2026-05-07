@@ -5,27 +5,27 @@ export interface MenuItem {
 
 export const Menu:MenuItem[] = [
     {
-        id: 'Inicio',
+        id: 'inicio',
         name: 'Inicio'
     },
     {
-        id: 'Projetos',
+        id: 'projetos',
         name: 'Projetos'
     },
     {
-        id: 'ComoTrabalho',
+        id: 'comoTrabalho',
         name: 'Como trabalho'
     },
     {
-        id: 'Experiência',
+        id: 'experiencia',
         name: 'Experiência'
     },
     {
-        id: 'Sobre',
+        id: 'sobre',
         name: 'Sobre'
     },
     {
-        id: 'Contato',
+        id: 'contato',
         name: 'Contato'
     }
 ]

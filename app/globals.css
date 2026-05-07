@@ -15,22 +15,87 @@
   }
 }
 
-@theme {
-  --font-poppins: "Poppins", sans-serif;
-  --font-montserrat: "Montserrat", sans-serif;
-  
-  --font-sans: var(--font-montserrat);
-
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-size-titulo: 32px;
+@keyframes marquee-loop {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
 }
 
-@media (prefers-color-scheme: dark) {
+@theme {
+  --font-poppins: "Poppins", sans-serif, system-ui;
+  --font-montserrat: "Montserrat", sans-serif, system-ui;
+
+  --animate-marquee-stack-forward: marquee-loop 20s linear infinite;
+  --animate-marquee-stack-reverse: marquee-loop 28s linear infinite reverse;
+
+  /* Display & Headings */
+   --text-h1: 3.5rem; 
+   --text-h1--line-height: 1.1; 
+   --text-h1--font-family: var(--font-montserrat);
+
+  --text-h2: 2.5rem; 
+  --text-h2--line-height: 1.2; 
+  --text-h2--font-family: var(--font-montserrat);
+
+  --text-h3: 2rem; 
+  --text-h3--line-height: 1.3; 
+  --text-h3--font-family: var(--font-montserrat);
+
+  --text-h4: 1.5rem; 
+  --text-h4--line-height: 1.4; 
+  --text-h4--font-family: var(--font-montserrat);
+
+  --text-h5: 1.25rem; 
+  --text-h5--line-height: 1.5; 
+  --text-h5--font-family: var(--font-montserrat);
+
+  /* Body & Labels */
+  --text-body-lead: 1.25rem;
+  --text-body-lead--line-height: 1.5;
+  --text-body-lead--font-family: var(--font-poppins);
+
+  --text-body-default: 1rem;
+  --text-body-default--line-height: 1.5;
+  --text-body-default--font-family: var(--font-poppins);
+
+  --text-body-small: 0.875rem;
+  --text-body-small--line-height: 1.5;
+  --text-body-small--font-family: var(--font-poppins);
+
+  --text-label-overline: 0.875rem;
+  --text-label-overline--line-height: 1.5;
+  --text-label-overline--font-family: var(--font-poppins);
+
+  --text-label-micro: 0.75rem;
+  --text-label-micro--line-height: 1.4;
+  --text-label-micro--font-family: var(--font-poppins);
+
+  --text-label-light: 0.75rem;
+  --text-label-light--line-height: 1.4;
+  --text-label-light--font-family: var(--font-poppins);
+}
+
+@media (max-width: 767px) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --text-h1: 2.25rem;
+    --text-h2: 2rem;
+    --text-h3: 1.5rem;
+    --text-h4: 1.25rem;
+    --text-h4--font-weight: 500;
+    --text-h4--line-height: 1.4;
+    --text-h5: 1.125rem;
+
+    --text-body-lead: 1.125rem;   
+    --text-body-default: 0.875rem; 
+    --text-body-small: 0.75rem;   
+    --text-label-overline: 0.75rem; 
+    --text-label-micro: 0.625rem;   
+    --text-label-light: 0.625rem;   
+    --text-code: 0.875rem;  
   }
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
