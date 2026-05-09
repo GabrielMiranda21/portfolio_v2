@@ -1,7 +1,7 @@
 'use client'
 
 import Card from "@/components/Sections/Projetos/Card";
-import Button from "@/components/UI/Button"
+import Button from "@/components/Custom/Button"
 import { ProjectProps } from "@/lib/projects"
 import { useState } from "react"
 

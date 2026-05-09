@@ -1,6 +1,6 @@
 'use client'
 
-import Button from "@/components/UI/Button";
+import Button from "@/components/Custom/Button";
 import Link from "next/link";
 import { mdiTrayArrowDown } from "@mdi/js";
 import Icon from "@mdi/react";

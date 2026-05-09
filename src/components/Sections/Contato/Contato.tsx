@@ -1,6 +1,6 @@
 'use client'
 
-import Button from "@/components/UI/Button";
+import Button from "@/components/Custom/Button";
 import { ShieldCheck, Send } from "lucide-react";
 import { useState } from "react";
 
@@ -91,7 +91,7 @@ export default function Contact() {
                 <fieldset className="flex flex-col gap-4 bg-[#EDF3FF] rounded-[14px] p-6">
                     <div className="flex flex-col gap-2 lg:gap-4 w-full md:flex-row">
                         <div className="flex flex-col gap-2 w-full">
-                            <label className="text-[#1B263B] text-body-default font-normal">
+                            <label className="text-[#1B263B] text-body-default font-medium">
                                 Nome completo <b className="text-[#EF4444]">*</b>
                             </label>
                             <input
@@ -105,8 +105,8 @@ export default function Contact() {
                         </div>
 
                         <div className="flex flex-col gap-2 w-full">
-                            <label className="text-[#1B263B] text-body-default font-normal">
-                                E-mail <b className="text-[#EF4444] text-body-default font-normal">*</b>
+                            <label className="text-[#1B263B] text-body-default font-medium">
+                                E-mail <b className="text-[#EF4444] text-body-default font-medium">*</b>
                             </label>
                             <input
                                 type="email"
@@ -120,8 +120,8 @@ export default function Contact() {
                     </div>
 
                     <div className="flex flex-col gap-2">
-                        <label className="text-[#1B263B] text-body-default font-normal">
-                            Whatsapp <b className="text-[#EF4444] text-body-default font-normal">*</b>
+                        <label className="text-[#1B263B] text-body-default font-medium">
+                            Whatsapp <b className="text-[#EF4444] text-body-default font-medium">*</b>
                         </label>
                         <input
                             type="text"
@@ -134,8 +134,8 @@ export default function Contact() {
                     </div>
 
                     <div className="flex flex-col gap-2">
-                        <label className="text-[#1B263B] text-body-default font-normal">
-                            Sua dúvida <b className="text-[#EF4444] text-body-default font-normal">*</b>
+                        <label className="text-[#1B263B] text-body-default font-medium">
+                            Sua dúvida <b className="text-[#EF4444] text-body-default font-medium">*</b>
                         </label>
                         <textarea
                             name="doubt"

@@ -1,6 +1,6 @@
 'use client'
 
-import Button from "@/components/UI/Button"
+import Button from "@/components/Custom/Button"
 import Token from "./Tokens"
 import Image from "next/image"
 

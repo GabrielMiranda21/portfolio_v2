@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Manrope, Montserrat, } from "next/font/google";
-import Header from "@/components/Header/Header";
+import Header from "@/components/Sections/Header/Header";
+import CustomCursor from "@/components/Custom/CustomCursor";
 // @ts-ignore
 import "./globals.css";
 
@@ -32,6 +33,7 @@ export default function RootLayout({
         className={`${montserrat.variable} ${manrope.variable} antialiased m-0 p-0 box-border`}
       >
         <Header />
+        <CustomCursor />
         <main>
           {children}
         </main>

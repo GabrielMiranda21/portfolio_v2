@@ -1,6 +1,6 @@
 'use client'
 
-import Button from '@/components/UI/Button'
+import Button from '@/components/Custom/Button'
 import Icon from '@mdi/react'
 import { mdiLinkedin, mdiTrayArrowDown } from '@mdi/js'
 import { GraduationCap } from 'lucide-react'
@@ -114,8 +114,8 @@ export default function Sobremim() {
             <div className="flex flex-col w-full px-3 gap-6 min-[1300px]:grid min-[1300px]:grid-cols-2">
                 <div className="flex flex-col items-center gap-6 bg-white px-6 py-6 md:px-6 lg:px-6 rounded-xl border border-[#5E6472]">
                     <Photo />
-                    <h3 className='text-h3 font-bold text-[#1B263B]'>Gabriel Miranda</h3>
-                    <p className="text-center text-body-default font-normal text-[#5E6472]">
+                    <h3 className='text-h3 font-bold text-[#1B263B] text-start'>Gabriel Miranda</h3>
+                    <p className="text-start text-body-default font-normal text-[#5E6472]">
                         Sou Product Designer e Desenvolvedor Front-end em início de carreira, com foco em criar experiências digitais claras, funcionais e bem estruturadas.
                         Tenho interesse em entender o problema antes da solução, buscando unir experiência do usuário, design de interface e desenvolvimento para construir produtos consistentes.
                         Ao longo dos meus estudos e projetos práticos, atuei desde a definição de fluxos e regras de negócio até a criação de interfaces e implementação de funcionalidades, sempre com atenção à usabilidade e organização do código.

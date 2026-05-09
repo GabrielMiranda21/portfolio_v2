@@ -9,10 +9,10 @@ function scrollToSection(id: string) {
 
 export default function DesktopMenu() {
     return (
-        <nav className="font-poppins">
-            <ul className="list-none flex gap-9 text-[#1B263B]">
+        <nav>
+            <ul className="list-none flex gap-6 text-[#1B263B]">
                 {Menu.map((item) => (
-                    <li key={item.id} className="text-body-default font-medium min-[850px]:text-body-default hover:font-semibold">
+                    <li key={item.id} className="text-body-default font-medium hover:drop-shadow-[0_1px_1px_rgba(27,38,59,0.30)]">
                         <a
                             href={`#${item.id}`}
                             onClick={(e) => {
