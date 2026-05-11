@@ -1,15 +1,20 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useMousePointer } from '@/hooks/useMousePointer';
 
 export default function CustomCursor() {
   const [isHovering, setIsHovering] = useState(false);
-  const [isVisible, setIsVisible] = useState(false); // 👈 novo
+  const [isVisible, setIsVisible] = useState(false);
   const position = useRef({ x: 0, y: 0 });
   const cursorRef = useRef<HTMLDivElement>(null);
   const rafRef = useRef<number>(0);
 
+  const isMouseUser = useMousePointer();
+
   useEffect(() => {
+    if (!isMouseUser) return;
+
     const handleMouseMove = (e: MouseEvent) => {
       position.current = { x: e.clientX, y: e.clientY };
       cancelAnimationFrame(rafRef.current);
@@ -51,14 +56,18 @@ export default function CustomCursor() {
       cancelAnimationFrame(rafRef.current);
       observer.disconnect();
     };
-  }, []);
+  }, [[isMouseUser]]);
+
+  if (!isMouseUser) return null;
 
   return (
     <>
-      {/* Cursor normal — fora do dialog */}
       <div
         ref={cursorRef}
-        className="fixed top-0 left-0 pointer-events-none z-[99999] hidden lg:block"
+        className={`
+          fixed top-0 left-0 pointer-events-none z-[99999]
+          ${isMouseUser ? 'hidden md:block' : 'hidden'}
+          `}
         style={{
           willChange: 'transform',
           opacity: isVisible ? 1 : 0, 

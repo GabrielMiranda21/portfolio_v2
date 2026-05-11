@@ -17,7 +17,7 @@ import { SiFigma } from 'react-icons/si'
 import { MdOutlinePageview } from "react-icons/md";
 
 
-const responsiveCard = 'min-w-[280px] md:w-[300px] lg:w-[320px]'
+const responsiveCard = 'w-[250px] md:w-[300px] lg:w-[320px]'
 
 // Lembresse que na desestruturação você cria uma váriavel que recebe os dados 'project'[variavel] recebe um objeto project com chaves da interface ProjectProps
 export default function Card({ project }: { project: ProjectProps }) {
@@ -47,7 +47,7 @@ export default function Card({ project }: { project: ProjectProps }) {
 
 
     return (
-        <article className={`flex flex-col ${responsiveCard} snap-center h-125 pb-6 gap-4 rounded-xl bg-white`}>
+        <article className={`flex flex-col ${responsiveCard} snap-center shrink-0 pb-6 gap-4 rounded-xl bg-white `}>
             {isOpen && (
                 <div
                     className="fixed inset-0 bg-black/60 z-[9997]"
@@ -58,7 +58,6 @@ export default function Card({ project }: { project: ProjectProps }) {
 
             {isOpen && mounted && createPortal(
                 <div className="fixed inset-0 z-[10000] flex items-center justify-center p-4">
-                    {/* Overlay (Fundo escuro) */}
                     <div
                         className="absolute inset-0 bg-black/60 backdrop-blur-sm"
                         onClick={closeModal}
@@ -69,7 +68,7 @@ export default function Card({ project }: { project: ProjectProps }) {
                         aria-modal="true"
                         aria-labelledby="modal-title"
                         tabIndex={-1}
-                        ref={dialogRef} 
+                        ref={dialogRef}
                         className="relative bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] shadow-2xl overflow-hidden flex flex-col z-[10001]"
                     >
                         <button
@@ -79,7 +78,6 @@ export default function Card({ project }: { project: ProjectProps }) {
                             <Icon path={mdiClose} size={1.5} color={"#5E6472"} />
                         </button>
 
-                        {/* Conteúdo com Scroll Interno */}
                         <div className="overflow-y-auto p-6 md:p-12">
                             <header className="mb-6">
                                 <strong className="font-black text-3xl text-[#1B263B]">Sobre</strong>
@@ -100,7 +98,7 @@ export default function Card({ project }: { project: ProjectProps }) {
                 </div>,
                 document.body
             )}
-            <div className="relative w-full h-60">
+            <div className="relative w-full h-40 md:h-50 lg:h-50 shrink-0">
                 <Image
                     src={project.thumbnail || ""}
                     alt="imageProject"
@@ -108,72 +106,71 @@ export default function Card({ project }: { project: ProjectProps }) {
                     className="object-cover rounded-t-xl"
                 />
             </div>
-            <section className="flex flex-col justify-between gap-4 px-6 h-full">
-                <div className="flex flex-col justify-start items-start gap-2 flex-wrap flex-1">
-                    <h4 className='font-bold text-h4 text-[#1B263B]'>{project.title}</h4>
+            <section className="flex flex-col gap-4 px-4 justify-between h-full">
+                <div className="flex flex-col justify-start items-start gap-4 flex-wrap flex-1">
+                    <h5 className='font-bold text-h5 text-[#1B263B]'>{project.title}</h5>
                     <p className='font-normal text-body-default text-[#5E6472]'>{project.description}</p>
                 </div>
-                <div className="flex flex-col gap-6">
-                    <div className="flex flex-wrap gap-2">
-                        {project.techStack.map(tag => {
-                            return <Token key={tag}>{tag}</Token>
-                        })}
-                    </div>
-                    <div className="flex flex-wrap gap-2">
-                        <div className="flex w-full gap-2">
-                            <Link href={project.liveUrl || ""} target="_blank" className="w-full">
-                                <Button
-                                    variant={'primary'}
-                                    className={`
+                <div className="flex flex-wrap gap-2">
+                    {project.techStack.map(tag => {
+                        return <Token key={tag}>{tag}</Token>
+                    })}
+                </div>
+                <div className="flex flex-wrap gap-2 justify-between h-auto">
+                    <div className="flex w-full gap-2">
+                        <Link href={project.liveUrl || ""} target="_blank" className="w-full">
+                            <Button
+                                variant={'primary'}
+                                className={`
                                         flex justify-center items-center gap-2 w-full py-2 px-2 rounded-xl
                                         ${project.liveUrl === "" ? 'disabled:bg-gray-500' : 'bg-[#1B263B]'}
                                     `}
-                                >
-                                    <Icon path={mdiLinkPlus} size={1} />
-                                    Demo
-                                </Button>
-                            </Link>
+                            >
+                                <Icon path={mdiLinkPlus} size={1} />
+                                Demo
+                            </Button>
+                        </Link>
 
-                            {project.category === 'Web' ? (
-                                <Link href={project.repoUrl || ""} target="_blank" className="w-full">
-                                    <Button
-                                        variant="black"
-                                        className={`
+                        {project.category === 'Web' ? (
+                            <Link href={project.repoUrl || ""} target="_blank" className="w-full">
+                                <Button
+                                    variant="black"
+                                    className={`
                                             flex justify-center items-center gap-2 w-full py-2 px-2 rounded-xl
                                             ${project.repoUrl === "" ? 'disabled:bg-gray-500' : 'bg-[#000000]'}
                                         `}>
-                                        <Icon path={mdiGithub} size={1} />
-                                        Github
-                                    </Button>
-                                </Link>
-                            ) : (
-                                <Link href={project.repoUrl || ""} target="_blank" className="w-full">
-                                    <Button
-                                        variant="brand"
-                                        className={`
+                                    <Icon path={mdiGithub} size={1} />
+                                    Github
+                                </Button>
+                            </Link>
+                        ) : (
+                            <Link href={project.repoUrl || ""} target="_blank" className="w-full">
+                                <Button
+                                    variant="brand"
+                                    className={`
                                                 flex justify-center items-center gap-2 w-full py-2 px-2 rounded-xl
                                                 ${project.repoUrl === "" ? 'disabled:bg-gray-500' : 'bg-[#4361EE]'}
                                             `}
-                                    >
-                                        <SiFigma size={24} style={{ strokeWidth: "1px" }} />
-                                        Figma
-                                    </Button>
-                                </Link>
-                            )}
-                        </div>
-                        <Button
-                            variant={'terciary'}
-                            onClick={openModal}
-                            className={`
+                                >
+                                    <SiFigma size={24} style={{ strokeWidth: "1px" }} />
+                                    Figma
+                                </Button>
+                            </Link>
+                        )}
+                    </div>
+                    <Button
+                        variant={'terciary'}
+                        onClick={openModal}
+                        className={`
                                 flex justify-center items-center gap-2 w-full py-2 px-2 rounded-xl
                                 ${project.content === "" ? 'disabled:bg-gray-500' : 'bg-[#10B981]'}
                             `}
-                        >
-                            <MdOutlinePageview size={24} color="#EDF3FF" />
-                            Ver detalhes
-                        </Button>
-                    </div>
+                    >
+                        <MdOutlinePageview size={24} color="#EDF3FF" />
+                        Ver detalhes
+                    </Button>
                 </div>
+
             </section>
         </article>
     )

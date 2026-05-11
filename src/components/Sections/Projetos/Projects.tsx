@@ -33,7 +33,7 @@ export default function Project({ initialProjects }: ProjectSectionProps ){
                         Design
                     </Button>
                 </div>
-                <div className="flex overflow-x-auto overflow-y-hidden snap-x snap-mandatory gap-6 pb-4 scrollbar-hide w-full h-full">
+                <div className="flex overflow-x-auto overflow-y-hidden snap-x snap-mandatory gap-3 pb-4 scrollbar-thin w-full h-full">
                     {
                         initialProjects
                             .filter(item => { // Filter apenas valida dados e permite passar baseado na validação se for "Banana" passa somente "Banana" e retorna uma nova lista
