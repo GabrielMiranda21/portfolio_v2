@@ -8,33 +8,26 @@ import ReactMarkDown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { useRef, useState, useEffect } from "react";
 import { ProjectProps } from "@/lib/projects";
+import Link from "next/link";
+import { createPortal } from "react-dom";
 
 import Icon from "@mdi/react";
 import { mdiLinkPlus, mdiGithub, mdiClose } from "@mdi/js";
 import { SiFigma } from 'react-icons/si'
 import { MdOutlinePageview } from "react-icons/md";
-import Link from "next/link";
 
 
 const responsiveCard = 'min-w-[280px] md:w-[300px] lg:w-[320px]'
 
-interface ModalProps {
-  projectModal: {
-    title: string;
-    content: string | null; // O texto markdown vindo do banco
-  }
-}
-
 // Lembresse que na desestruturação você cria uma váriavel que recebe os dados 'project'[variavel] recebe um objeto project com chaves da interface ProjectProps
-export default function Card({project}:{ project: ProjectProps}, { projectModal }: ModalProps){ 
-    const dialogRef = useRef<HTMLDialogElement>(null);
-    const [ isOpen, setIsOpen ] = useState(false);
-    const openModal = () => { 
-        dialogRef.current?.showModal() 
-        setIsOpen(true) 
+export default function Card({ project }: { project: ProjectProps }) {
+    const dialogRef = useRef<HTMLDivElement>(null);
+    const [isOpen, setIsOpen] = useState(false);
+    const [mounted, setMounted] = useState(false);
+    const openModal = () => {
+        setIsOpen(true)
     };
-    const closeModal = () => { 
-        dialogRef.current?.close() 
+    const closeModal = () => {
         setIsOpen(false)
         document.body.style.overflow = 'unset'; // Força a liberação do scroll
     };
@@ -47,37 +40,72 @@ export default function Card({project}:{ project: ProjectProps}, { projectModal 
         }
         return () => { document.body.style.overflow = 'unset'; };
     }, [isOpen]);
-    
-    
+
+    useEffect(() => {
+        setMounted(true); // Garante que estamos no cliente
+    }, []);
+
 
     return (
         <article className={`flex flex-col ${responsiveCard} snap-center h-125 pb-6 gap-4 rounded-xl bg-white`}>
-            <dialog ref={dialogRef} onClose={closeModal} className="fixed inset-0 m-auto rounded-3xl max-w-2xl w-[90vw] max-h-[80vh] backdrop:bg-black/60 shadow-2xl border-none p-0 overflow-hidden">
-                <div className="flex flex-col bg-white h-full max-h-[80vh] overflow-y-auto p-4 md:p-12 gap-3">
-                    <div className="flex justify-between items-center w-full">
-                        <strong className="font-black text-3xl text-[#1B263B]">Sobre</strong>
-                        <button onClick={closeModal} className="cursor-pointer">
-                            <Icon path={mdiClose} size={1.5} color={"#5E6472"}></Icon>
+            {isOpen && (
+                <div
+                    className="fixed inset-0 bg-black/60 z-[9997]"
+                    onClick={closeModal}
+                    aria-hidden="true"
+                />
+            )}
+
+            {isOpen && mounted && createPortal(
+                <div className="fixed inset-0 z-[10000] flex items-center justify-center p-4">
+                    {/* Overlay (Fundo escuro) */}
+                    <div
+                        className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+                        onClick={closeModal}
+                    />
+
+                    <div
+                        role="dialog"
+                        aria-modal="true"
+                        aria-labelledby="modal-title"
+                        tabIndex={-1}
+                        ref={dialogRef} 
+                        className="relative bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] shadow-2xl overflow-hidden flex flex-col z-[10001]"
+                    >
+                        <button
+                            onClick={closeModal}
+                            className="absolute top-4 right-4 p-2 hover:bg-gray-100 rounded-full transition-colors z-50 cursor-pointer"
+                        >
+                            <Icon path={mdiClose} size={1.5} color={"#5E6472"} />
                         </button>
+
+                        {/* Conteúdo com Scroll Interno */}
+                        <div className="overflow-y-auto p-6 md:p-12">
+                            <header className="mb-6">
+                                <strong className="font-black text-3xl text-[#1B263B]">Sobre</strong>
+                            </header>
+
+                            <div className="prose prose-slate max-w-none">
+                                <ReactMarkDown remarkPlugins={[remarkGfm]} components={{
+                                    h1: ({ ...props }) => <h2 {...props} className="font-montserrat font-bold text-xl text-[#1B263B] mt-6" />,
+                                    p: ({ ...props }) => <p {...props} className="font-poppins font-normal text-md text-[#5E6472] leading-relaxed" />,
+                                    ul: ({ ...props }) => <ul className="list-disc pl-6 flex flex-col text-[#5E6472]" {...props} />,
+                                    li: ({ ...props }) => <li className="font-poppins marker:text-[#1B263B]" {...props} />
+                                }}>
+                                    {project.content || "Este projeto ainda não possui uma descrição detalhada."}
+                                </ReactMarkDown>
+                            </div>
+                        </div>
                     </div>
-                    <div className="prose prose-slate max-w-none pb-4">
-                        <ReactMarkDown remarkPlugins={[remarkGfm]}  components={{
-                            h1: ({ node, ...props }) => <h2 {...props} className="font-montserrat font-bold text-xl text-[#1B263B] mt-6"/>,
-                            p: ({ node, ...props }) => <p {...props} className="font-poppins font-normal text-md text-[#5E6472] leading-relaxed"/>,
-                            ul: ({node, ...props}) => <ul className="list-disc list-outside pl-6 flex flex-col text-[#5E6472]" {...props} />,
-                            li: ({node, ...props}) => <li className="font-poppins marker:text-[#1B263B]" {...props} />
-                        }}> 
-                            {projectModal.content}
-                        </ReactMarkDown>
-                    </div>
-                </div>
-            </dialog>
+                </div>,
+                document.body
+            )}
             <div className="relative w-full h-60">
                 <Image
                     src={project.thumbnail || ""}
                     alt="imageProject"
                     fill
-                    className="object-cover rounded-t -xl w-full"
+                    className="object-cover rounded-t-xl"
                 />
             </div>
             <section className="flex flex-col justify-between gap-4 px-6 h-full">
@@ -93,28 +121,55 @@ export default function Card({project}:{ project: ProjectProps}, { projectModal 
                     </div>
                     <div className="flex flex-wrap gap-2">
                         <div className="flex w-full gap-2">
-                            <Button variant={'primary'} className="flex justify-center item-center gap-2 w-full py-2 px-2 rounded-xl">
-                                <Icon path={mdiLinkPlus} size={1}/>
-                                Demo
-                            </Button>
+                            <Link href={project.liveUrl || ""} target="_blank" className="w-full">
+                                <Button
+                                    variant={'primary'}
+                                    className={`
+                                        flex justify-center items-center gap-2 w-full py-2 px-2 rounded-xl
+                                        ${project.liveUrl === "" ? 'disabled:bg-gray-500' : 'bg-[#1B263B]'}
+                                    `}
+                                >
+                                    <Icon path={mdiLinkPlus} size={1} />
+                                    Demo
+                                </Button>
+                            </Link>
 
                             {project.category === 'Web' ? (
-                                <Link href={project.repoUrl || ""}>
-                                    <Button variant="black" className="flex justify-center items-center gap-2 w-full py-2 px-2 rounded-xl">
-                                        <Icon path={mdiGithub} size={1}/>
+                                <Link href={project.repoUrl || ""} target="_blank" className="w-full">
+                                    <Button
+                                        variant="black"
+                                        className={`
+                                            flex justify-center items-center gap-2 w-full py-2 px-2 rounded-xl
+                                            ${project.repoUrl === "" ? 'disabled:bg-gray-500' : 'bg-[#000000]'}
+                                        `}>
+                                        <Icon path={mdiGithub} size={1} />
                                         Github
                                     </Button>
                                 </Link>
                             ) : (
-                                <Button variant="brand" className="flex justify-center items-center gap-2 w-full py-2 px-2 rounded-xl">
-                                    {/* Aqui você trocaria o ícone para o do Figma */}
-                                    <SiFigma size={24} style={{ strokeWidth: "1px" }}/>
-                                    Figma
-                                </Button>
+                                <Link href={project.repoUrl || ""} target="_blank" className="w-full">
+                                    <Button
+                                        variant="brand"
+                                        className={`
+                                                flex justify-center items-center gap-2 w-full py-2 px-2 rounded-xl
+                                                ${project.repoUrl === "" ? 'disabled:bg-gray-500' : 'bg-[#4361EE]'}
+                                            `}
+                                    >
+                                        <SiFigma size={24} style={{ strokeWidth: "1px" }} />
+                                        Figma
+                                    </Button>
+                                </Link>
                             )}
                         </div>
-                        <Button variant={'terciary'} className="flex justify-center items-center gap-2 w-full py-2 px-2 rounded-xl" onClick={openModal}>
-                            <MdOutlinePageview  size={24} color="#EDF3FF"/>
+                        <Button
+                            variant={'terciary'}
+                            onClick={openModal}
+                            className={`
+                                flex justify-center items-center gap-2 w-full py-2 px-2 rounded-xl
+                                ${project.content === "" ? 'disabled:bg-gray-500' : 'bg-[#10B981]'}
+                            `}
+                        >
+                            <MdOutlinePageview size={24} color="#EDF3FF" />
                             Ver detalhes
                         </Button>
                     </div>

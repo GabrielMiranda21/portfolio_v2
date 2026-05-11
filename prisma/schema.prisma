@@ -11,8 +11,8 @@ datasource db {
 }
 
 enum ProjectCategory {
-  WEB
-  DESIGN
+  Web
+  Design
 }
 
 model Project {
@@ -20,7 +20,7 @@ model Project {
   title       String
   description String
   content     String?         @db.Text
-  category    ProjectCategory @default(WEB)
+  category    ProjectCategory @default(Web)
   thumbnail   String?
   techStack   String[]
   repoUrl     String?

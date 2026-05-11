@@ -107,6 +107,10 @@
   * {
     cursor: none !important;
   }
+
+  ::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+  }
 }
 
 body {

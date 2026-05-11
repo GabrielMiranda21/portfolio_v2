@@ -9,6 +9,7 @@ export interface ProjectProps {
     thumbnail: string | null
     repoUrl: string | null
     liveUrl: string | null
+    content: string | null
     category: 'Web' | 'Design'
     featured: boolean
     createdAt: Date
