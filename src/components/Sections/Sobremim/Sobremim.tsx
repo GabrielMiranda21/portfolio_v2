@@ -188,7 +188,7 @@ export default function Sobremim() {
                         </Button>
                     </Link>
 
-                    <Link href="/gabrielmiranda_curriculo.pdf" download="gabrielmiranda_curriculo.pdf" className='w-full'>
+                    <Link href="/curriculo.pdf" download="curriculo.pdf" className='w-full'>
                         <Button variant='primary' className="flex justify-center items-center gap-2 text-[#ffffff] w-full text-body-lead font-bold py-4 px-6 max-w-71 rounded-xl">
                             <Icon path={mdiTrayArrowDown} size={1} />
                             Curriculo

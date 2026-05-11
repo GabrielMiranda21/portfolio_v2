@@ -1,26 +1,36 @@
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
+import { prisma } from './prisma';
 
+// Você pode exportar este tipo para usar nos seus componentes
 export interface ProjectProps {
-    data: {
-        title: string
-        description: string
-        tags: string[]
-        img: string
-        type: string
-    }
-    content: string
+    id: string
+    title: string
+    description: string
+    techStack: string[]
+    thumbnail: string | null
+    repoUrl: string | null
+    liveUrl: string | null
+    category: 'Web' | 'Design'
+    featured: boolean
+    createdAt: Date
 }
 
-export const filesText= (): ProjectProps[] => {
-    const projectFolder = path.join(process.cwd(), 'src', 'content', 'projects');
-    const files: string[] = fs.readdirSync(projectFolder);
-    const newFile = files.map((file) => { 
-        let metadata = fs.readFileSync(path.join(projectFolder, file), 'utf-8') 
-        let {data, content} = matter(metadata)
-        return { data, content } as ProjectProps
-    })
+// Função para buscar todos os projetos
+export const getProjects = async () => {
+  try {
+    const projects = await prisma.project.findMany({
+      orderBy: { createdAt: 'desc' },
+    });
+    return projects;
+  } catch (error) {
+    console.error("Erro ao buscar projetos:", error);
+    return [];
+  }
+};
 
-    return newFile;
-}
+// Função específica para buscar por categoria (Web ou Design)
+/*export const getProjectsByCategory = async (category: 'WEB' | 'DESIGN') => {
+    return await prisma.project.findMany({
+      where: { category },
+      orderBy: { createdAt: 'desc' }
+    });
+};*/

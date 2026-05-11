@@ -27,7 +27,7 @@ export default function Hero() {
                 </div>
                 <h1 className="flex flex-col items-center text-h1 font-extrabold mb-4 text-white lg:items-start lg:w-[70%]">
                     <span
-                        className="bg-clip-text text-transparent text-h1 text-center lg:text-start"
+                        className="bg-clip-text text-transparent text-h1 text-center lg:text-start w-fit"
                         style={{ backgroundImage: 'linear-gradient(90deg, #c47de8, #7b8ff0, #45d9f5)' }}
                     >
                         O designer que também implementa.
@@ -50,7 +50,7 @@ export default function Hero() {
                         Ver projetos
                     </Button>
                     
-                    <Link href="/gabrielmiranda_curriculo.pdf" download="gabrielmiranda_curriculo.pdf" className="w-full flex justify-center md:justify-start lg:justify-start">
+                    <Link href="/curriculo.pdf" download="curriculo.pdf" className="w-full flex justify-center md:justify-start lg:justify-start">
                         <Button 
                             type="submit" 
                             variant="primary" 

@@ -13,12 +13,20 @@ import Icon from "@mdi/react";
 import { mdiLinkPlus, mdiGithub, mdiClose } from "@mdi/js";
 import { SiFigma } from 'react-icons/si'
 import { MdOutlinePageview } from "react-icons/md";
+import Link from "next/link";
 
 
 const responsiveCard = 'min-w-[280px] md:w-[300px] lg:w-[320px]'
 
+interface ModalProps {
+  projectModal: {
+    title: string;
+    content: string | null; // O texto markdown vindo do banco
+  }
+}
+
 // Lembresse que na desestruturação você cria uma váriavel que recebe os dados 'project'[variavel] recebe um objeto project com chaves da interface ProjectProps
-export default function Card({project}:{ project: ProjectProps}){ 
+export default function Card({project}:{ project: ProjectProps}, { projectModal }: ModalProps){ 
     const dialogRef = useRef<HTMLDialogElement>(null);
     const [ isOpen, setIsOpen ] = useState(false);
     const openModal = () => { 
@@ -59,14 +67,14 @@ export default function Card({project}:{ project: ProjectProps}){
                             ul: ({node, ...props}) => <ul className="list-disc list-outside pl-6 flex flex-col text-[#5E6472]" {...props} />,
                             li: ({node, ...props}) => <li className="font-poppins marker:text-[#1B263B]" {...props} />
                         }}> 
-                            {project.content}
+                            {projectModal.content}
                         </ReactMarkDown>
                     </div>
                 </div>
             </dialog>
             <div className="relative w-full h-60">
                 <Image
-                    src={project.data.img}
+                    src={project.thumbnail || ""}
                     alt="imageProject"
                     fill
                     className="object-cover rounded-t -xl w-full"
@@ -74,12 +82,12 @@ export default function Card({project}:{ project: ProjectProps}){
             </div>
             <section className="flex flex-col justify-between gap-4 px-6 h-full">
                 <div className="flex flex-col justify-start items-start gap-2 flex-wrap flex-1">
-                    <h4 className='font-bold text-h4 text-[#1B263B]'>{project.data.title}</h4>
-                    <p className='font-normal text-body-default text-[#5E6472]'>{project.data.description}</p>
+                    <h4 className='font-bold text-h4 text-[#1B263B]'>{project.title}</h4>
+                    <p className='font-normal text-body-default text-[#5E6472]'>{project.description}</p>
                 </div>
                 <div className="flex flex-col gap-6">
                     <div className="flex flex-wrap gap-2">
-                        {project.data.tags.map(tag => {
+                        {project.techStack.map(tag => {
                             return <Token key={tag}>{tag}</Token>
                         })}
                     </div>
@@ -90,11 +98,13 @@ export default function Card({project}:{ project: ProjectProps}){
                                 Demo
                             </Button>
 
-                            {project.data.type === 'Web' ? (
-                                <Button variant="black" className="flex justify-center items-center gap-2 w-full py-2 px-2 rounded-xl">
-                                    <Icon path={mdiGithub} size={1}/>
-                                    Github
-                                </Button>
+                            {project.category === 'Web' ? (
+                                <Link href={project.repoUrl || ""}>
+                                    <Button variant="black" className="flex justify-center items-center gap-2 w-full py-2 px-2 rounded-xl">
+                                        <Icon path={mdiGithub} size={1}/>
+                                        Github
+                                    </Button>
+                                </Link>
                             ) : (
                                 <Button variant="brand" className="flex justify-center items-center gap-2 w-full py-2 px-2 rounded-xl">
                                     {/* Aqui você trocaria o ícone para o do Figma */}

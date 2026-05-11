@@ -37,10 +37,10 @@ export default function Project({ initialProjects }: ProjectSectionProps ){
                     {
                         initialProjects
                             .filter(item => { // Filter apenas valida dados e permite passar baseado na validação se for "Banana" passa somente "Banana" e retorna uma nova lista
-                                return item.data.type === activeTab 
+                                return item.category === activeTab 
                             })
                             .map(item => {
-                                return <Card key={item.data.title} project={item}></Card> // Fabrica os cards pra gente acessando o objeto que enviamos pelas props
+                                return <Card key={item.id} project={item}></Card> // Fabrica os cards pra gente acessando o objeto que enviamos pelas props
                             })
                     }
                 </div>

@@ -4,12 +4,12 @@ import { IconProps } from "@mdi/react/dist/IconProps";
 type ButtonVariantBackgroundColor = 'cta' | 'primary' | 'secundary' | 'terciary' | 'brand' | 'black' | 'none';
 
 const buttonColors:Record<string, string>  = {
-    cta: "bg-gradient-to-r from-[#c47de8] via-[#7b8ff0] to-[#45d9f5] text-[#EDF3FF] hover:brightness-110 hover:saturate-150",
-    primary: "bg-[#1B263B] text-[#EDF3FF]",
-    secundary: "bg-[#3B82F6] text-[#EDF3FF]",
-    terciary: "bg-[#10B981] text-[#EDF3FF]",
-    brand: "bg-[#4361EE] text-[#EDF3FF]",
-    black: "bg-[#000000] text-[#EDF3FF]",
+    cta: "bg-gradient-to-r from-[#c47de8] via-[#7b8ff0] to-[#45d9f5] text-[#EDF3FF] transition-transform hover:scale-115",
+    primary: "bg-[#1B263B] text-[#EDF3FF] hover:brightness-110 hover:saturate-125",
+    secundary: "bg-[#3B82F6] text-[#EDF3FF] hover:brightness-110 hover:saturate-125",
+    terciary: "bg-[#10B981] text-[#EDF3FF] hover:brightness-110 hover:saturate-125",
+    brand: "bg-[#4361EE] text-[#EDF3FF] hover:brightness-110 hover:saturate-125",
+    black: "bg-[#000000] text-[#EDF3FF] hover:brightness-110 hover:saturate-125",
     none: "bg-[#EDF3FF] border-solid border border-[#1B263B] text-[#1B263B]"
 }
 
@@ -21,7 +21,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 
 export default function Button({variant, children, icon, iconProps, className, ...props}: ButtonProps){
     return <button
-        className={`text-body-default font-bold text-center hover:opacity-90 transition-opacity cursor-pointer ${buttonColors[variant]} ${className || ""}`}
+        className={`text-body-default font-bold text-center cursor-pointer ${buttonColors[variant]} ${className || ""}`}
         {...props}
     >
         {/*Renderização Condicional*/}

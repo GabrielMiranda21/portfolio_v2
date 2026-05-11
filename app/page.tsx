@@ -5,17 +5,18 @@ import Project from "@/components/Sections/Projetos/Projects";
 import Sobremim from "@/components/Sections/Sobremim/Sobremim";
 import Stack from "@/components/Sections/Stack/Stack";
 import Contato from "@/components/Sections/Contato/Contato"
-
-import { filesText } from '@/lib/projects'
 import TipoServico from "@/components/Sections/TipoServico/TipoServico";
 
-export default function Home() {
-  const allProjects = filesText();
+import { getProjects } from "@/lib/projects";
+
+export default async function Home() {
+  const projects = await getProjects();
+
   return (
     <>
       <Hero />
       <Stack />
-      <Project initialProjects={allProjects}/>
+      <Project initialProjects={projects}/>
       <ComoTrabalho />
       <TipoServico />
       <Freelancer />
