@@ -29,10 +29,10 @@ export default function Card({ project }: { project: ProjectProps }) {
     };
     const closeModal = () => {
         setIsOpen(false)
-        document.body.style.overflow = 'unset'; // Força a liberação do scroll
+        document.body.style.overflow = 'unset';
     };
 
-    useEffect(() => { // Serve para efeitos externos do site. 3 parametros: Estado, função de limpeza(Opcional) e monitoramento de estado
+    useEffect(() => {
         if (isOpen) {
             document.body.style.overflow = 'hidden';
         } else {
@@ -42,9 +42,8 @@ export default function Card({ project }: { project: ProjectProps }) {
     }, [isOpen]);
 
     useEffect(() => {
-        setMounted(true); // Garante que estamos no cliente
+        setMounted(true);
     }, []);
-
 
     return (
         <article className={`flex flex-col ${responsiveCard} snap-center shrink-0 pb-6 gap-4 rounded-xl bg-white `}>
@@ -69,28 +68,38 @@ export default function Card({ project }: { project: ProjectProps }) {
                         aria-labelledby="modal-title"
                         tabIndex={-1}
                         ref={dialogRef}
-                        className="relative bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] shadow-2xl overflow-hidden flex flex-col z-[10001]"
+                        className="relative bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] shadow-2xl overflow-hidden flex flex-col z-[10001] pb-6 pr-2 md:pr-6"
                     >
-                        <button
-                            onClick={closeModal}
-                            className="absolute top-4 right-4 p-2 hover:bg-gray-100 rounded-full transition-colors z-50 cursor-pointer"
-                        >
-                            <Icon path={mdiClose} size={1.5} color={"#5E6472"} />
-                        </button>
 
-                        <div className="overflow-y-auto p-6 md:p-12">
-                            <header className="mb-6">
-                                <strong className="font-black text-3xl text-[#1B263B]">Sobre</strong>
-                            </header>
+                        <div className="overflow-y-auto p-6 md:p-10">
+                            <div className="flex justify-between items-start h-auto">
+                                <header className="mb-4">
+                                    <strong className="font-black text-h3 text-[#1B263B]">Sobre</strong>
+                                </header>
+                                <button
+                                    onClick={closeModal}
+                                    className="p-2 hover:bg-gray-100 rounded-full transition-colors z-50 cursor-pointer"
+                                >
+                                    <Icon path={mdiClose} size={1.5} color={"#5E6472"} />
+                                </button>
+                            </div>
 
-                            <div className="prose prose-slate max-w-none">
+                            <div className="prose prose-slate max-w-none flex flex-col">
                                 <ReactMarkDown remarkPlugins={[remarkGfm]} components={{
-                                    h1: ({ ...props }) => <h2 {...props} className="font-montserrat font-bold text-xl text-[#1B263B] mt-6" />,
-                                    p: ({ ...props }) => <p {...props} className="font-poppins font-normal text-md text-[#5E6472] leading-relaxed" />,
-                                    ul: ({ ...props }) => <ul className="list-disc pl-6 flex flex-col text-[#5E6472]" {...props} />,
-                                    li: ({ ...props }) => <li className="font-poppins marker:text-[#1B263B]" {...props} />
+                                    h1: ({ ...props }) => <h2 {...props} className="font-bold text-h5 text-[#1B263B] mt-8" />,
+                                    h2: ({ ...props }) => <h3 {...props} className="font-bold text-h5 text-[#1B263B] mt-6" />,
+                                    p: ({ ...props }) => <p {...props} className="font-normal text-body-default text-[#5E6472] leading-relaxed" />,
+                                    ul: ({ ...props }) => <ul className="font-normal text-body-default list-disc pl-6 flex flex-col text-[#5E6472]" {...props} />,
+                                    li: ({ ...props }) => <li className="font-normal text-body-default marker:text-[#1B263B]" {...props} />
                                 }}>
-                                    {project.content || "Este projeto ainda não possui uma descrição detalhada."}
+                                    {project.content
+                                        ?.replace(/\\n/g, '\n')
+                                        .replace(/([^\n])(#{1,6} )/g, '$1\n\n$2')
+                                        .replace(/([^\n])(- )/g, '$1\n$2')
+                                        .trim()
+                                        || "Este projeto ainda não possui uma descrição detalhada."
+                                    }
+
                                 </ReactMarkDown>
                             </div>
                         </div>
@@ -103,7 +112,8 @@ export default function Card({ project }: { project: ProjectProps }) {
                     src={project.thumbnail || ""}
                     alt="imageProject"
                     fill
-                    className="object-cover rounded-t-xl"
+                    className="object-cover rounded-t-xl h-auto"
+                    sizes="(max-width: 768px) 85vw, (max-width: 1024px) 400px, 400px"
                 />
             </div>
             <section className="flex flex-col gap-4 px-4 justify-between h-full">

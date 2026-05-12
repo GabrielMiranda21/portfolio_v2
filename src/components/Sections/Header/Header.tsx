@@ -15,6 +15,8 @@ export default function Header() {
                     alt="gabriel miranda"
                     width={40}
                     height={74}
+                    className="h-auto"
+                    priority
                 />
                 <span className="text-lg font-extrabold bg-clip-text text-transparent drop-shadow-[0_1px_1px_rgba(0,0,0,0.15)]"
                     style={{

@@ -37,7 +37,7 @@ export default function CustomCursor() {
     document.addEventListener('mouseenter', handleMouseEnter);
 
     const updateTargets = () => {
-      const targets = document.querySelectorAll('a, button, .interactive-card, input, textarea');
+      const targets = document.querySelectorAll('a, button, .interactive-card, input, textarea, ul');
       targets.forEach(el => {
         el.addEventListener('mouseenter', handleHoverStart);
         el.addEventListener('mouseleave', handleHoverEnd);

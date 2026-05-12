@@ -6,13 +6,13 @@ import { ProjectProps } from "@/lib/projects"
 import { useState } from "react"
 
 export interface ProjectSectionProps {
-  initialProjects: ProjectProps[]
+    initialProjects: ProjectProps[]
 }
 
-export default function Project({ initialProjects }: ProjectSectionProps ){
+export default function Project({ initialProjects }: ProjectSectionProps) {
     const [activeTab, setActiveTab] = useState<'Web' | 'Design'>('Web');
-    
-    return (    
+
+    return (
         <section id="projetos" className="flex flex-col justify-center gap-6 bg-[#EDF3FF] py-18 px-6 transform-gpu backface-hidden">
             <h3 className="font-black text-[2rem] md:text-5xl text-center text-[#1B263B]">Projetos em destaque</h3>
 
@@ -36,12 +36,19 @@ export default function Project({ initialProjects }: ProjectSectionProps ){
                 <div className="flex overflow-x-auto overflow-y-hidden snap-x snap-mandatory gap-3 pb-4 scrollbar-thin w-full h-full">
                     {
                         initialProjects
-                            .filter(item => { // Filter apenas valida dados e permite passar baseado na validação se for "Banana" passa somente "Banana" e retorna uma nova lista
-                                return item.category === activeTab 
+                            .filter(item => item.category === activeTab)
+                            .sort((a, b) => {
+                                if (a.featured && !b.featured) return -1;
+                                if (!a.featured && b.featured) return 1;
+
+                                if (a.id > b.id) return -1;
+                                if (a.id < b.id) return 1;
+
+                                return 0;
                             })
-                            .map(item => {
-                                return <Card key={item.id} project={item}></Card> // Fabrica os cards pra gente acessando o objeto que enviamos pelas props
-                            })
+                            .map(item => (
+                                <Card key={item.id} project={item} />
+                            ))
                     }
                 </div>
             </div>

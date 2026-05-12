@@ -15,7 +15,6 @@ export interface ProjectProps {
     createdAt: Date
 }
 
-// Função para buscar todos os projetos
 export const getProjects = async () => {
   try {
     const projects = await prisma.project.findMany({
@@ -27,11 +26,3 @@ export const getProjects = async () => {
     return [];
   }
 };
-
-// Função específica para buscar por categoria (Web ou Design)
-/*export const getProjectsByCategory = async (category: 'WEB' | 'DESIGN') => {
-    return await prisma.project.findMany({
-      where: { category },
-      orderBy: { createdAt: 'desc' }
-    });
-};*/

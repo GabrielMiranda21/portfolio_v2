@@ -94,13 +94,13 @@ export default function TipoServico() {
     <section className='flex flex-col gap-6 px-6 lg:px-12 py-30 bg-[#EDF3FF]'>
       <h2 className='text-h2 font-extrabold text-[#1B263B]'>Tipos de serviços</h2>
 
-      <div className="flex flex-col w-full h-150 md:h-95 lg:h-95 overflow-hidden md:flex-row lg:flex-row">
+      <ul className="flex flex-col w-full h-150 md:h-95 lg:h-95 overflow-hidden md:flex-row lg:flex-row p-0 m-0 list-none pointer-events-none">
         {cards.map((card) => (
-          <div
+          <li
             key={card.number}
             style={{ backgroundColor: card.bg }}
             className={`
-              relative flex flex-col justify-end px-6 pb-7 overflow-hidden
+              relative flex flex-col justify-end px-6 pb-7 overflow-hidden box-border 
               transition-[flex] duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] pointer-events-auto 
               ${card.border}
               ${active === null
@@ -117,7 +117,7 @@ export default function TipoServico() {
             <div
               className={`
                 absolute top-0 left-0 right-0 h-[55%] flex items-center justify-center
-                transition-opacity duration-400
+                transition-opacity duration-400 pointer-events-none
                 ${active === card.number ? 'opacity-35' : 'opacity-[0.18]'}
               `}
             >
@@ -126,7 +126,7 @@ export default function TipoServico() {
 
             {/* Content */}
             <div className="relative z-10">
-              <p className="text-[10px] font-medium tracking-[0.1em] uppercase text-white/45 mb-1.5">
+              <p className="text-[10px] font-medium tracking-[0.1em] uppercase text-white/45 mb-1.5 pointer-events-none">
                 {card.number}
               </p>
 
@@ -134,20 +134,20 @@ export default function TipoServico() {
               <div
                 className={`
                   h-0.5 rounded-full bg-gradient-to-r mb-2.5
-                  transition-[width] duration-400
+                  transition-[width] duration-400 pointer-events-none
                   ${card.accent}
                   ${active === card.number ? 'w-12' : 'w-7'}
                 `}
               />
 
-              <h3 className="text-h5 font-medium text-white mb-3 leading-tight">
+              <h3 className="text-h5 font-medium text-white mb-3 leading-tight pointer-events-none">
                 {card.title}
               </h3>
 
               {/* Services list */}
               <ul
-                className={`
-                  flex flex-col gap-1.5 overflow-hidden
+                className={` 
+                  flex flex-col gap-1.5 overflow-hidden pointer-events-none
                   transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]
                   ${active === card.number
                     ? 'max-h-48 opacity-100'
@@ -156,7 +156,7 @@ export default function TipoServico() {
                 `}
               >
                 {card.services.map((s) => (
-                  <li key={s} className="flex items-center gap-2 text-body-default text-white/65 whitespace-nowrap font-normal">
+                  <li key={s} className="flex items-center gap-2 text-body-default text-white/65 whitespace-nowrap font-normal pointer-events-none">
                     <span
                       className="w-1 h-1 rounded-full flex-shrink-0"
                       style={{ background: card.dot }}
@@ -166,9 +166,9 @@ export default function TipoServico() {
                 ))}
               </ul>
             </div>
-          </div>
+          </li>
         ))}
-      </div>
+      </ul>
 
     </section>
   )
