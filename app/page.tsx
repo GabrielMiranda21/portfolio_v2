@@ -8,6 +8,7 @@ import Contato from "@/components/Sections/Contato/Contato"
 import TipoServico from "@/components/Sections/TipoServico/TipoServico";
 
 import { getProjects } from "@/lib/projects";
+import FAQ from "@/components/Sections/FAQ/Faq";
 
 export default async function Home() {
   const projects = await getProjects();
@@ -21,6 +22,7 @@ export default async function Home() {
       <TipoServico />
       <Freelancer />
       <Sobremim />
+      <FAQ />
       <Contato />
     </>
   );

@@ -17,12 +17,12 @@ export const Menu:MenuItem[] = [
         name: 'Como trabalho'
     },
     {
-        id: 'experiencia',
-        name: 'Experiência'
-    },
-    {
         id: 'sobre',
         name: 'Sobre'
+    },
+    {
+        id: 'faq',
+        name: 'Dúvidas'
     },
     {
         id: 'contato',

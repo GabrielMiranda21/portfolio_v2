@@ -1,5 +1,6 @@
 'use client'
 
+import Button from "@/components/Custom/Button";
 import { Menu } from "@/constants/Menu";
 
 function scrollToSection(id: string) {
@@ -9,10 +10,10 @@ function scrollToSection(id: string) {
 
 export default function DesktopMenu() {
     return (
-        <nav>
-            <ul className="list-none flex gap-6 text-[#1B263B]">
+        <nav className="flex items-center gap-6">
+            <ul className="flex gap-6 list-none">
                 {Menu.map((item) => (
-                    <li key={item.id} className="text-body-default font-medium hover:drop-shadow-[0_1px_1px_rgba(27,38,59,0.30)]">
+                    <li key={item.id} className="text-body-default font-medium text-[#1B263B]/80 hover:text-[#1B263B]">
                         <a
                             href={`#${item.id}`}
                             onClick={(e) => {

@@ -21,19 +21,22 @@ export default function Project({ initialProjects }: ProjectSectionProps) {
                     <Button
                         onClick={() => setActiveTab('Web')}
                         variant={activeTab === 'Web' ? 'primary' : 'none'}
-                        className={`flex justify-center items-center text-body-lead font-normal rounded-l-lg px-6 py-2 ${activeTab === 'Web' ? 'text-white' : 'text-[#5E6472]'}`}
+                        className={`flex justify-center items-center text-body-lead font-normal rounded-l-lg px-6 py-2 ${activeTab === 'Web' ? 'text-white' : 'text-[#1B263B]'}`}
                     >
                         Web
                     </Button>
                     <Button
                         onClick={() => setActiveTab('Design')}
                         variant={activeTab === 'Design' ? 'primary' : 'none'}
-                        className={`flex justify-center items-center text-body-lead font-normal rounded-r-lg w-auto px-6 py-2 ${activeTab === 'Design' ? 'text-white' : 'text-[#5E6472]'}`}
+                        className={`flex justify-center items-center text-body-lead font-normal rounded-r-lg w-auto px-6 py-2 ${activeTab === 'Design' ? 'text-white' : 'text-[#1B263B]'}`}
                     >
                         Design
                     </Button>
                 </div>
-                <div className="flex overflow-x-auto overflow-y-hidden snap-x snap-mandatory gap-3 pb-4 scrollbar-thin w-full h-full">
+                <div className={`
+                        flex overflow-x-auto overflow-y-hidden snap-x snap-mandatory gap-3 pb-4 scrollbar-thin w-full h-full
+                        [@media(min-width:1024px)_and_(max-width:1172px)]:grid-cols-3 lg:grid lg:grid-cols-4 lg:grid-flow-row
+                    `}>
                     {
                         initialProjects
                             .filter(item => item.category === activeTab)

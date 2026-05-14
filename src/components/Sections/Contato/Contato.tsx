@@ -88,7 +88,7 @@ export default function Contact() {
                 className="flex flex-col gap-6 p-3 md:p-6 lg:p-6"
             >
 
-                <fieldset className="flex flex-col gap-4 bg-[#EDF3FF] rounded-[14px] p-6">
+                <fieldset className="flex flex-col gap-4 bg-[#EDF3FF] rounded-[14px] p-6 shadow-2xs">
                     <div className="flex flex-col gap-2 lg:gap-4 w-full md:flex-row">
                         <div className="flex flex-col gap-2 w-full">
                             <label className="text-[#1B263B] text-body-default font-medium">
@@ -100,7 +100,7 @@ export default function Contact() {
                                 value={form.name}
                                 onChange={handleChange}
                                 placeholder="Seu nome"
-                                className="p-3 bg-white border border-[#4361EE] rounded-[14px] text-[#1B263B] text-body-default font-normal"
+                                className="p-3 bg-white rounded-[14px] text-[#1B263B] text-body-default font-normal"
                             />
                         </div>
 
@@ -114,7 +114,7 @@ export default function Contact() {
                                 value={form.email}
                                 onChange={handleChange}
                                 placeholder="Seu e-mail"
-                                className="p-3 bg-white border border-[#4361EE] rounded-[14px] text-[#1B263B] text-body-default font-normal"
+                                className="p-3 bg-white rounded-[14px] text-[#1B263B] text-body-default font-normal"
                             />
                         </div>
                     </div>
@@ -129,7 +129,7 @@ export default function Contact() {
                             value={form.whatsapp}
                             onChange={handleChange}
                             placeholder="Whatsapp"
-                            className="p-3 bg-white border border-[#4361EE] rounded-[14px] text-[#1B263B] text-body-default font-normal"
+                            className="p-3 bg-white rounded-[14px] text-[#1B263B] text-body-default font-normal"
                         />
                     </div>
 
@@ -142,7 +142,10 @@ export default function Contact() {
                             value={form.doubt}
                             onChange={handleChange}
                             placeholder="Descreva sua dúvida..."
-                            className="p-3 bg-white border border-[#4361EE] rounded-[14px] text-[#1B263B] text-body-default font-normal h-25 lg:h-50"
+                            className="
+                                p-3 bg-white rounded-[14px] text-[#1B263B] text-body-default font-normal 
+                                h-25 lg:h-50 resize-none focus:border-none
+                            "
                         />
                     </div>
 

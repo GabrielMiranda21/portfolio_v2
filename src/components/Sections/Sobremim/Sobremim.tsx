@@ -104,6 +104,11 @@ const tools: Stack[] = [
         id: 9,
         src: '/stack/nodejs.svg',
         name: 'nodejs'
+    },
+    {
+        id: 10,
+        src: '/stack/figma.svg',
+        name: 'figma'
     }
 ]
 

@@ -6,7 +6,7 @@ import Image from "next/image"
 
 import ReactMarkDown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, use } from "react";
 import { ProjectProps } from "@/lib/projects";
 import Link from "next/link";
 import { createPortal } from "react-dom";
@@ -17,9 +17,8 @@ import { SiFigma } from 'react-icons/si'
 import { MdOutlinePageview } from "react-icons/md";
 
 
-const responsiveCard = 'w-[250px] md:w-[300px] lg:w-[320px]'
+const responsiveCard = 'w-[250px] md:w-[300px] lg:w-full'
 
-// Lembresse que na desestruturação você cria uma váriavel que recebe os dados 'project'[variavel] recebe um objeto project com chaves da interface ProjectProps
 export default function Card({ project }: { project: ProjectProps }) {
     const dialogRef = useRef<HTMLDivElement>(null);
     const [isOpen, setIsOpen] = useState(false);
@@ -46,7 +45,9 @@ export default function Card({ project }: { project: ProjectProps }) {
     }, []);
 
     return (
-        <article className={`flex flex-col ${responsiveCard} snap-center shrink-0 pb-6 gap-4 rounded-xl bg-white `}>
+        <article className={`
+            flex flex-col ${responsiveCard} snap-center shrink-0 pb-6 gap-4 rounded-xl bg-white 
+        `}>
             {isOpen && (
                 <div
                     className="fixed inset-0 bg-black/60 z-[9997]"
@@ -68,21 +69,21 @@ export default function Card({ project }: { project: ProjectProps }) {
                         aria-labelledby="modal-title"
                         tabIndex={-1}
                         ref={dialogRef}
-                        className="relative bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] shadow-2xl overflow-hidden flex flex-col z-[10001] pb-6 pr-2 md:pr-6"
+                        className="relative bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] shadow-2xl overflow-hidden flex flex-col z-[10001] pt-10 pb-6 pr-2 md:pr-6"
                     >
+                        <div className="absolute flex justify-between items-start h-auto px-6 md:px-10 w-full bg-white">
+                            <header className="mb-4">
+                                <strong className="font-black text-h3 text-[#1B263B]">Sobre</strong>
+                            </header>
+                            <button
+                                onClick={closeModal}
+                                className="p-2 hover:bg-gray-100 rounded-full transition-colors z-50 cursor-pointer mr-8"
+                            >
+                                <Icon path={mdiClose} size={1.5} color={"#5E6472"} />
+                            </button>
+                        </div>
 
-                        <div className="overflow-y-auto p-6 md:p-10">
-                            <div className="flex justify-between items-start h-auto">
-                                <header className="mb-4">
-                                    <strong className="font-black text-h3 text-[#1B263B]">Sobre</strong>
-                                </header>
-                                <button
-                                    onClick={closeModal}
-                                    className="p-2 hover:bg-gray-100 rounded-full transition-colors z-50 cursor-pointer"
-                                >
-                                    <Icon path={mdiClose} size={1.5} color={"#5E6472"} />
-                                </button>
-                            </div>
+                        <div className="overflow-y-auto p-6 md:px-10 md:pt-13 rounded-xl">
 
                             <div className="prose prose-slate max-w-none flex flex-col">
                                 <ReactMarkDown remarkPlugins={[remarkGfm]} components={{
@@ -112,6 +113,7 @@ export default function Card({ project }: { project: ProjectProps }) {
                     src={project.thumbnail || ""}
                     alt="imageProject"
                     fill
+                    loading="eager"
                     className="object-cover rounded-t-xl h-auto"
                     sizes="(max-width: 768px) 85vw, (max-width: 1024px) 400px, 400px"
                 />
@@ -133,8 +135,9 @@ export default function Card({ project }: { project: ProjectProps }) {
                                 variant={'primary'}
                                 className={`
                                         flex justify-center items-center gap-2 w-full py-2 px-2 rounded-xl
-                                        ${project.liveUrl === "" ? 'disabled:bg-gray-500' : 'bg-[#1B263B]'}
+                                        ${project.liveUrl ? 'disabled:bg-gray-500' : 'bg-[#1B263B]'}
                                     `}
+                                    disabled={!project.liveUrl}
                             >
                                 <Icon path={mdiLinkPlus} size={1} />
                                 Demo
@@ -147,8 +150,10 @@ export default function Card({ project }: { project: ProjectProps }) {
                                     variant="black"
                                     className={`
                                             flex justify-center items-center gap-2 w-full py-2 px-2 rounded-xl
-                                            ${project.repoUrl === "" ? 'disabled:bg-gray-500' : 'bg-[#000000]'}
-                                        `}>
+                                            ${project.repoUrl ? 'disabled:bg-gray-500' : 'bg-[#000000]'}
+                                        `}
+                                        disabled={!project.repoUrl}
+                                    >
                                     <Icon path={mdiGithub} size={1} />
                                     Github
                                 </Button>
@@ -159,8 +164,9 @@ export default function Card({ project }: { project: ProjectProps }) {
                                     variant="brand"
                                     className={`
                                                 flex justify-center items-center gap-2 w-full py-2 px-2 rounded-xl
-                                                ${project.repoUrl === "" ? 'disabled:bg-gray-500' : 'bg-[#4361EE]'}
+                                                ${project.repoUrl ? 'disabled:bg-gray-500' : 'bg-[#4361EE]'}
                                             `}
+                                    disabled={!project.repoUrl}
                                 >
                                     <SiFigma size={24} style={{ strokeWidth: "1px" }} />
                                     Figma
