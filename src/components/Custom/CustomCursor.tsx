@@ -17,6 +17,7 @@ export default function CustomCursor() {
 
     const handleMouseMove = (e: MouseEvent) => {
       position.current = { x: e.clientX, y: e.clientY };
+      setIsVisible(true);
       cancelAnimationFrame(rafRef.current);
       rafRef.current = requestAnimationFrame(() => {
         if (cursorRef.current) {
