@@ -18,7 +18,7 @@ export default function Hero() {
         <section id="inicio" className={`relative flex flex-col justify-center items-start text-center gap-6 ${gradientHero} pt-40 pb-30 px-6 lg:px-12 w-full overflow-x-hidden`}>
             <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-100 h-100 bg-indigo-500/10 blur-[120px] rounded-full -z-10" />
 
-            <div className="flex flex-col justify-center items-center w-full lg:items-start">
+            <div className="flex flex-col justify-center items-center w-full md:items-center lg:items-start">
                 <div className="flex items-center justify-center lg:justify-start flex-wrap gap-1.5 w-fit max-w-full px-3 py-1 rounded-full border border-white/20 bg-white/10 mb-5">
                     <span className="w-2 h-2 rounded-full bg-[#45d9f5]" />
                     <span className="text-label-micro font-medium text-white/70 wrap-break-word text-center lg:text-left">
@@ -38,7 +38,7 @@ export default function Hero() {
                 <p className="text-body-default text-white/65 mb-7 text-center lg:text-start lg:w-[50%]">
                     Transformo problemas de produto em experiências digitais, unindo design e desenvolvimento em cada etapa do processo.
                 </p>
-                <div className="flex flex-col justify-center items-center gap-6 w-full md:flex-row lg:flex-row lg:justify-start">
+                <div className="flex flex-col justify-center items-center gap-6 w-full md:flex-row md:justify-center lg:flex-row lg:justify-start">
                     <Button
                         variant='cta'
                         className="w-full text-white py-4 px-6 whitespace-normal max-w-71 rounded-xl"
@@ -47,7 +47,7 @@ export default function Hero() {
                         Ver projetos
                     </Button>
                     
-                    <Link href="/curriculo.pdf" download="curriculo.pdf" className="w-full flex justify-center md:justify-start lg:justify-start">
+                    <Link href="/curriculo.pdf" download="curriculo.pdf" className="w-full max-w-71">
                         <Button 
                             type="submit" 
                             variant="surface" 

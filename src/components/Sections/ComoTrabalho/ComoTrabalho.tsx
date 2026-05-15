@@ -44,10 +44,10 @@ export default function ComoTrabalho(){
                     Menu.map(item => {
                         const Icon = item.icon;
                         return (
-                            <div key={item.id} className="flex flex-col justify-start items-center gap-2 shadow w-full p-6 bg-white rounded-xl transition-transform hover:scale-110">
-                                <Icon size={96} color="#1B263B" strokeWidth={1.5} aria-hidden="true"/>
-                                <strong className="font-montserrat text-h4 font-semibold text-[#1B263B]">{item.name}</strong>
-                                <p className="font-poppins text-body-default font-normal text-[#5E6472]">{item.content}</p>
+                            <div key={item.id} className="flex flex-col justify-start items-center gap-2 shadow w-full p-6 bg-white rounded-xl transition-transform hover:scale-110 md:hover:scale-105">
+                                <Icon size={48} color="#1B263B" strokeWidth={1.5} aria-hidden="true"/>
+                                <h5 className="text-h5 font-semibold text-[#1B263B]">{item.name}</h5>
+                                <p className="text-body-default font-normal text-[#5E6472]">{item.content}</p>
                             </div>
                         )
                     })
