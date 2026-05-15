@@ -39,7 +39,7 @@ export default function Contact() {
         setStatus({ type: "loading", message: "Enviando..." });
 
         try {
-            const response = await fetch("https://formspree.io/f/xjglyqze", {
+            const response = await fetch("https://formspree.io/f/mkoydoqd", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -82,7 +82,7 @@ export default function Contact() {
         <section id="contato" className="flex flex-col gap-6 px-3 lg:px-48 py-30 bg-white">
             <h4 className="text-center text-h2 text-[#1B263B] font-black">Contato</h4>
             <p className="text-center text-body-default text-[#5E6472]">Se quiser conversar sobre oportunidades, projetos ou trocar ideias, fico à disposição para falar.</p>
-            <p className="text-center text-body-lead font-bold text-[#4361EE]">Estou aberto a oportunidades como Product Designer, Desenvolvedor Front-end ou posições que envolvam experiência do usuário e desenvolvimento.</p>
+            {/*"<p className="text-center text-body-lead font-bold text-[#4361EE]">Estou aberto a oportunidades como Product Designer, Desenvolvedor Front-end ou posições que envolvam experiência do usuário e desenvolvimento.</p>*/}
             <form
                 onSubmit={handleSubmit}
                 className="flex flex-col gap-6 p-3 md:p-6 lg:p-6"

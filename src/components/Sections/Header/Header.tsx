@@ -3,6 +3,7 @@
 import MenuMobile from "./MobileMenu";
 import DesktopMenu from "./DesktopMenu";
 
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Header() {
@@ -17,6 +18,16 @@ export default function Header() {
                     className="h-auto"
                     priority
                 />*/}
+
+                <Image
+                    src={'/logo2.svg'}
+                    alt="gabriel miranda"
+                    width={40}
+                    height={74}
+                    className="h-auto"
+                    priority
+                />
+                
                 <span className="text-lg font-extrabold bg-clip-text text-transparent drop-shadow-[0_1px_1px_rgba(0,0,0,0.15)]"
                     style={{
                         backgroundImage: 'linear-gradient(90deg, #c47de8, #7b8ff0, #45d9f5)',
