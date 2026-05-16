@@ -100,7 +100,7 @@ export default function Contact() {
                                 value={form.name}
                                 onChange={handleChange}
                                 placeholder="Seu nome"
-                                className="p-3 bg-white rounded-[14px] text-[#1B263B] text-body-default font-normal"
+                                className="p-3 bg-white rounded-[14px] text-[#1B263B] text-body-default font-normal autofill:shadow-[0_0_0_30px_#ffffff_inset]"
                             />
                         </div>
 
@@ -114,7 +114,7 @@ export default function Contact() {
                                 value={form.email}
                                 onChange={handleChange}
                                 placeholder="Seu e-mail"
-                                className="p-3 bg-white rounded-[14px] text-[#1B263B] text-body-default font-normal"
+                                className="p-3 bg-white rounded-[14px] text-[#1B263B] text-body-default font-normal autofill:shadow-[0_0_0_30px_#ffffff_inset]"
                             />
                         </div>
                     </div>
@@ -129,7 +129,7 @@ export default function Contact() {
                             value={form.whatsapp}
                             onChange={handleChange}
                             placeholder="Whatsapp"
-                            className="p-3 bg-white rounded-[14px] text-[#1B263B] text-body-default font-normal"
+                            className="p-3 bg-white rounded-[14px] text-[#1B263B] text-body-default font-normal autofill:shadow-[0_0_0_30px_#ffffff_inset]"
                         />
                     </div>
 
@@ -144,7 +144,7 @@ export default function Contact() {
                             placeholder="Descreva sua dúvida..."
                             className="
                                 p-3 bg-white rounded-[14px] text-[#1B263B] text-body-default font-normal 
-                                h-25 lg:h-50 resize-none focus:border-none
+                                h-25 lg:h-50 resize-none focus:border-none autofill:shadow-[0_0_0_30px_#ffffff_inset]
                             "
                         />
                     </div>
