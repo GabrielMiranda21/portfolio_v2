@@ -20,7 +20,7 @@ export default function Header() {
                 />*/}
 
                 <Image
-                    src={'/logo2.svg'}
+                    src={'/logo.svg'}
                     alt="gabriel miranda"
                     width={40}
                     height={74}
