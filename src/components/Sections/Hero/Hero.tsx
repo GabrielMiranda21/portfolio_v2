@@ -25,7 +25,7 @@ export default function Hero() {
                         Product Engineer · Aberto a oportunidades
                     </span>
                 </div>
-                <h1 className="flex flex-col items-center text-h1 font-extrabold mb-4 text-white lg:items-start lg:w-[70%]">
+                <h1 className="flex flex-col items-center text-h1 w-full font-extrabold mb-4 text-white lg:items-start lg:w-[70%]">
                     <span
                         className="bg-clip-text text-transparent text-h1 text-center lg:text-start w-fit"
                         style={{ backgroundImage: 'linear-gradient(90deg, #c47de8, #7b8ff0, #45d9f5)' }}
@@ -38,20 +38,22 @@ export default function Hero() {
                 <p className="text-body-default text-white/65 mb-7 text-center lg:text-start lg:w-[50%]">
                     Transformo problemas de produto em experiências digitais, unindo design e desenvolvimento em cada etapa do processo.
                 </p>
-                <div className="flex flex-col justify-center items-center gap-6 w-full md:flex-row md:justify-center lg:flex-row lg:justify-start">
+                <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 w-full">
+
                     <Button
                         variant='cta'
-                        className="w-full text-white py-4 px-6 whitespace-normal max-w-71 rounded-xl"
+                        className="flex justify-center items-center py-4 px-6 rounded-xl w-full [@media(min-width:426px)_and_(max-width:639px)]:w-71 sm:w-71"
                         onClick={() => scrollToSection('projetos')}
                     >
                         Ver projetos
                     </Button>
-                    
-                    <Link href="/curriculo.pdf" download="curriculo.pdf" className="w-full max-w-71">
-                        <Button 
-                            type="submit" 
-                            variant="surface" 
-                            className="flex justify-center items-center gap-2 py-4 px-6 whitespace-normal max-w-71 rounded-xl w-full"
+
+
+                    <Link href="/curriculo.pdf" download="curriculo.pdf" className="w-full [@media(min-width:426px)_and_(max-width:639px)]:w-71 sm:w-71">
+                        <Button
+                            type="submit"
+                            variant="surface"
+                            className="flex justify-center items-center gap-2 py-4 px-6 rounded-xl w-full sm:w-71"
                         >
                             <Icon path={mdiTrayArrowDown} size={1} />
                             Curriculo
