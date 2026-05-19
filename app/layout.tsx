@@ -18,7 +18,7 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Gabriel Miranda",
+  title: "<Gabriel Miranda/>",
   description: "Portfólio para apresentação pessoal para recrutadores e clientes",
 };
 

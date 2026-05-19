@@ -1,6 +1,5 @@
 'use client'
 
-import Button from "@/components/Custom/Button";
 import { Menu } from "@/constants/Menu";
 
 function scrollToSection(id: string) {
