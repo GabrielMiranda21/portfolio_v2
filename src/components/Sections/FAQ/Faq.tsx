@@ -112,11 +112,11 @@ function FaqItem({ question, answer, badges }: {
 }
 
 export default function FAQ() {
-  const [activeTab, setActiveTab] = useState<Tab>('clientes')
+  const [activeTab, setActiveTab] = useState<Tab>('recrutadores')
 
   const tabs: { key: Tab; label: string }[] = [
-    { key: 'clientes', label: 'Para clientes' },
     { key: 'recrutadores', label: 'Para recrutadores' },
+    { key: 'clientes', label: 'Para clientes' },
   ]
 
   const faq = activeTab === 'clientes' ? clientesFaq : recrutadoresFaq
