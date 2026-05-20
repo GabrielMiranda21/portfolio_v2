@@ -5,6 +5,10 @@
   --foreground: #171717;
 }
 
+::-webkit-scrollbar {
+  display: block; 
+  width: 8px; /* tamanho da barra */
+}
 
 @layer utilities {
   .scrollbar-hide::-webkit-scrollbar {
@@ -106,7 +110,19 @@
   * {
     cursor: none !important;
   }
+  ::-webkit-scrollbar {
+    width: 6px; /* Bem fininha */
+  }
+  ::-webkit-scrollbar-track {
+    background: #ffffff; /* Cor de fundo da barra */
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #d1d1d1;
+    border-radius: 10px;
+  }
+}
 
+@media (max-width: 767px) {
   ::-webkit-scrollbar {
     display: none; /* Chrome/Safari */
   }
