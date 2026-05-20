@@ -115,11 +115,11 @@ const tools: Stack[] = [
 export default function Sobremim() {
     return (
         <section id="sobre" className="flex flex-col justify-center items-center gap-16 px-3 md:px-6 lg:px-12 py-30 bg-[#EDF3FF] w-full">
-            <h3 className="text-center text-h2 text-[#1B263B] font-black">Sobre mim</h3>
+            <h2 className="text-center text-h2 text-[#1B263B] font-black">Sobre mim</h2>
             <div className="flex flex-col w-full px-3 gap-6 min-[1300px]:grid min-[1300px]:grid-cols-2">
                 <div className="flex flex-col items-center gap-6 bg-white px-6 py-6 md:px-6 lg:px-6 rounded-xl border border-[#5E6472]">
                     <Photo />
-                    <h3 className='text-h3 font-bold text-[#1B263B] text-start'>Gabriel Miranda</h3>
+                    <h3 className='text-h4 font-bold text-[#1B263B] text-start'>Gabriel Miranda</h3>
                     <p className="text-start text-body-default font-normal text-[#5E6472]">
                         Sou Product Designer e Desenvolvedor Front-end em início de carreira, com foco em criar experiências digitais claras, funcionais e bem estruturadas.
                         Tenho interesse em entender o problema antes da solução, buscando unir experiência do usuário, design de interface e desenvolvimento para construir produtos consistentes.
@@ -132,7 +132,7 @@ export default function Sobremim() {
                     <div className='flex flex-col gap-6 bg-white p-6 rounded-xl border border-[#5E6472]'>
                         <div className="flex items-center gap-2 w-full">
                             <GraduationCap size={24} color={'#4361EE'} />
-                            <h4 className="text-xl md:text-2xl font-bold text-[#1B263B] text-wrap">Currículo Profissional</h4>
+                            <h3 className="text-h4 font-bold text-[#1B263B] text-wrap">Currículo Profissional</h3>
                         </div>
                         {dataProfissional.map((item, index) => {
                             return (
@@ -150,7 +150,7 @@ export default function Sobremim() {
                     <div className='flex flex-col gap-6 bg-white p-6 rounded-xl border border-[#5E6472]'>
                         <div className="flex items-center gap-2 w-full">
                             <GraduationCap size={24} color={'#4361EE'} />
-                            <h4 className="text-xl md:text-2xl font-bold text-[#1B263B] text-wrap">Currículo Acadêmico</h4>
+                            <h3 className="text-h4 font-bold text-[#1B263B] text-wrap">Currículo Acadêmico</h3>
                         </div>
                         {dataAcademic.map((item, index) => {
                             return (

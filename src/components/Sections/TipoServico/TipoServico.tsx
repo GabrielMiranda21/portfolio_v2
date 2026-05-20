@@ -135,7 +135,7 @@ export default function TipoServico() {
 
               <div className="relative z-10 flex flex-col gap-3 md:gap-2">
                 <div>
-                  <p className="text-[10px] font-medium tracking-[0.1em] uppercase text-white/45 mb-1.5 pointer-events-none">
+                  <p className="text-[10px] font-medium tracking-[0.1em] uppercase text-[#D8DEE8] mb-1.5 pointer-events-none">
                     {card.number}
                   </p>
 
@@ -173,7 +173,7 @@ export default function TipoServico() {
                     `}
                   >
                     {card.services.map((s) => (
-                      <li key={s} className="flex items-center gap-2 text-body-default text-white/65 whitespace-nowrap font-normal pointer-events-none">
+                      <li key={s} className="flex items-center gap-2 text-body-default text-[#D8DEE8] whitespace-nowrap font-normal pointer-events-none">
                         <span
                           className="w-1 h-1 rounded-full flex-shrink-0"
                           style={{ background: card.dot }}
@@ -184,7 +184,7 @@ export default function TipoServico() {
                   </ul>
 
                   <div className={`
-                      flex items-center text-body-small text-white/65 font-medium pointer-events-none 
+                      flex items-center text-body-small text-[#D8DEE8] font-medium pointer-events-none 
                       border border-white/65 p-2 w-fit h-fit rounded-xl bg-white/10 flex-wrap
                     `}>
                     {card.roll}

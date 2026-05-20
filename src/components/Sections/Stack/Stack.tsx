@@ -6,7 +6,7 @@ const services = [
     'Front-end',
     'Prototipagem',
     'Design System',
-    'Design Engineer',
+    'Product Engineer',
     'Figma',
     'React',
     'Acessibilidade',

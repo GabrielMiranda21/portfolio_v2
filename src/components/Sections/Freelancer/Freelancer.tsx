@@ -9,7 +9,7 @@ export default function Freelancer() {
     
     return (
         <section id="experiencia" className="flex flex-col items-center gap-6 px-6 lg:12 py-30 bg-white w-full">
-            <h3 className="text-center text-h2 text-[#1B263B] font-black max-w-200">Experiência em projetos reais, do design à implementação</h3>
+            <h2 className="text-center text-h2 text-[#1B263B] font-black max-w-200">Experiência em projetos reais, do design à implementação</h2>
             <p className="text-center text-body-default font-normal text-[#5E6472] max-w-250">Além de atuar como Product Designer e Desenvolvedor Front-end, desenvolvo projetos independentes para pessoas e empresas, assumindo responsabilidades que vão da definição do problema à entrega técnica.</p>
             <span className="text-center font-bold text-h3 text-[#1B263B]">Quer conversar sobre um projeto ou oportunidade?</span>
 

@@ -120,7 +120,7 @@ export default function Card({ project }: { project: ProjectProps }) {
             </div>
             <section className="flex flex-col gap-4 px-4 justify-between h-full">
                 <div className="flex flex-col justify-start items-start gap-4 flex-wrap flex-1">
-                    <h5 className='font-bold text-h5 text-[#1B263B]'>{project.title}</h5>
+                    <h2 className='font-bold text-h5 text-[#1B263B]'>{project.title}</h2>
                     <p className='font-normal text-body-default text-[#5E6472]'>{project.description}</p>
                 </div>
                 <div className="flex flex-wrap gap-2">

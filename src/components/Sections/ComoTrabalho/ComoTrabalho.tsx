@@ -46,7 +46,7 @@ export default function ComoTrabalho(){
                         return (
                             <div key={item.id} className="flex flex-col justify-start items-center gap-2 shadow w-full p-6 bg-white rounded-xl transition-transform hover:scale-110 md:hover:scale-105">
                                 <Icon size={48} color="#1B263B" strokeWidth={1.5} aria-hidden="true"/>
-                                <h5 className="text-h5 font-semibold text-[#1B263B]">{item.name}</h5>
+                                <h3 className="text-h5 font-semibold text-[#1B263B]">{item.name}</h3>
                                 <p className="text-body-default font-normal text-[#5E6472]">{item.content}</p>
                             </div>
                         )
