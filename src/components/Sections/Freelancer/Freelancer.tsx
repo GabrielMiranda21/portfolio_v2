@@ -22,6 +22,7 @@ export default function Freelancer() {
                     className="
                         flex justify-center items-center px-8 py-4 font-bold text-h4 text-[#1B263B] border border-[#4361EE] rounded-xl max-w-70
                     "
+                    aria-label="Entrar em contato"
                 >
                     Entrar em contato
                 </Button>

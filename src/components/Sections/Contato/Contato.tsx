@@ -91,36 +91,40 @@ export default function Contact() {
                 <fieldset className="flex flex-col gap-4 bg-[#EDF3FF] rounded-xl p-6 shadow-2xs">
                     <div className="flex flex-col gap-2 lg:gap-4 w-full md:flex-row">
                         <div className="flex flex-col gap-2 w-full">
-                            <label className="text-[#1B263B] text-body-default font-medium">
+                            <label htmlFor="name" className="text-[#1B263B] text-body-default font-medium">
                                 Nome completo <b className="text-[#EF4444]">*</b>
                             </label>
 
                             <div className="flex items-center bg-white rounded-xl px-2">
                                 <User size={24} strokeWidth={1.5} color="#5E6472"/>
                                 <input
+                                    id="name"
                                     type="text"
                                     name="name"
                                     value={form.name}
                                     onChange={handleChange}
                                     placeholder="Seu nome"
+                                    autoComplete="name"
                                     className="p-3 bg-white rounded-xl text-[#1B263B] text-body-default font-normal autofill:shadow-[0_0_0_30px_#ffffff_inset]"
                                 />
                             </div>
                         </div>
 
                         <div className="flex flex-col gap-2 w-full">
-                            <label className="text-[#1B263B] text-body-default font-medium">
+                            <label htmlFor="email" className="text-[#1B263B] text-body-default font-medium">
                                 E-mail <b className="text-[#EF4444] text-body-default font-medium">*</b>
                             </label>
 
                             <div className="flex items-center bg-white rounded-xl px-2">
                                 <Mail size={24} strokeWidth={1.5} color="#5E6472"/>
                                 <input
+                                    id="email"
                                     type="email"
                                     name="email"
                                     value={form.email}
                                     onChange={handleChange}
                                     placeholder="seu@email.com"
+                                    autoComplete="email"
                                     className="p-3 bg-white rounded-xl text-[#1B263B] text-body-default font-normal autofill:shadow-[0_0_0_30px_#ffffff_inset]"
                                 />
                             </div>
@@ -128,32 +132,36 @@ export default function Contact() {
                     </div>
 
                     <div className="flex flex-col gap-2">
-                        <label className="text-[#1B263B] text-body-default font-medium">
+                        <label htmlFor="whatsapp" className="text-[#1B263B] text-body-default font-medium">
                             Whatsapp <b className="text-[#EF4444] text-body-default font-medium">*</b>
                         </label>
 
                         <div className="flex items-center bg-white rounded-xl px-2">
                             <Phone size={24} strokeWidth={1.5} color="#5E6472"/>
                             <input
+                                id="whatsapp"
                                 type="text"
                                 name="whatsapp"
                                 value={form.whatsapp}
                                 onChange={handleChange}
                                 placeholder="(11) 99999-9999"
+                                autoComplete="tel"
                                 className="p-3 bg-white rounded-xl text-[#1B263B] text-body-default font-normal autofill:shadow-[0_0_0_30px_#ffffff_inset]"
                             />
                         </div>
                     </div>
 
                     <div className="flex flex-col gap-2">
-                        <label className="text-[#1B263B] text-body-default font-medium">
+                        <label htmlFor="doubt" className="text-[#1B263B] text-body-default font-medium">
                             Sua dúvida <b className="text-[#EF4444] text-body-default font-medium">*</b>
                         </label>
                         <textarea
+                            id="doubt"
                             name="doubt"
                             value={form.doubt}
                             onChange={handleChange}
                             placeholder="Descreva sua dúvida..."
+                            autoComplete="off"
                             className="
                                 p-3 bg-white rounded-xl text-[#1B263B] text-body-default font-normal 
                                 h-25 lg:h-50 resize-none focus:border-none autofill:shadow-[0_0_0_30px_#ffffff_inset]

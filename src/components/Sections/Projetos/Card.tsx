@@ -108,14 +108,14 @@ export default function Card({ project }: { project: ProjectProps }) {
                 </div>,
                 document.body
             )}
-            <div className="relative w-full h-40 md:h-50 lg:h-50 shrink-0">
+            <div className="relative w-full h-40 md:h-50 lg:h-50 shrink-0 aspect-video">
                 <Image
                     src={project.thumbnail || ""}
                     alt="imageProject"
                     fill
                     loading="eager"
                     className="object-cover rounded-t-xl h-auto"
-                    sizes="(max-width: 768px) 85vw, (max-width: 1024px) 400px, 400px"
+                    sizes="(max-width: 768px) 100vw, 400px"
                 />
             </div>
             <section className="flex flex-col gap-4 px-4 justify-between h-full">
