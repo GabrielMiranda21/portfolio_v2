@@ -169,6 +169,7 @@ export default function Contact() {
                             px-6 py-4 rounded-xl w-full disabled:bg-[#5E6472] disabled:text-[#f9fafb] ]
                             disabled:border-0 disabled:hover:brightness-100 disabled:bg-none flex gap-2 justify-center items-center
                         `}
+                        aria-label="Enviar mensagem"
                     >
                         <Send size={16} />
                         {status.type === "loading" ? "Enviando..." : "Enviar"}

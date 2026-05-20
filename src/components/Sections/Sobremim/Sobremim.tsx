@@ -187,14 +187,26 @@ export default function Sobremim() {
 
                 <div className="flex flex-col [@media(min-width:426px)_and_(max-width:639px)]:flex-row sm:flex-row sm:justify-center lg:flex-row lg:justify-center px-6 gap-6 w-full">
                     <Link href="https://www.linkedin.com/in/gabriel-miranda-363269205/" target="_blank" className='w-full sm:w-71'>
-                        <Button variant='secundary' className="flex justify-center items-center gap-2 text-[#ffffff] w-full text-body-lead font-bold py-4 px-6 sm:w-71 rounded-xl">
+                        <Button 
+                            variant='secundary' 
+                            className="
+                                    flex justify-center items-center gap-2 text-[#ffffff] w-full text-body-lead font-bold py-4 px-6 sm:w-71 rounded-xl
+                                "
+                            aria-label="Ver perfil linkedin"
+                            >
                             <Icon path={mdiLinkedin} size={1} />
                             Linkedin
                         </Button>
                     </Link>
 
                     <Link href="/curriculo.pdf" download="curriculo.pdf" className='w-full sm:w-71'>
-                        <Button variant='primary' className="flex justify-center items-center gap-2 text-[#ffffff] w-full text-body-lead font-bold py-4 px-6 sm:w-71 rounded-xl">
+                        <Button 
+                        variant='primary' 
+                        className="
+                                flex justify-center items-center gap-2 text-[#ffffff] w-full text-body-lead font-bold py-4 px-6 sm:w-71 rounded-xl
+                            "
+                        aria-label="Ver curriculo"
+                        >
                             <Icon path={mdiTrayArrowDown} size={1} />
                             Curriculo
                         </Button>

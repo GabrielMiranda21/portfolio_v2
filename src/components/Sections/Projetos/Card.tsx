@@ -137,10 +137,11 @@ export default function Card({ project }: { project: ProjectProps }) {
                                         flex justify-center items-center gap-2 w-full py-2 px-2 rounded-xl
                                         ${project.liveUrl ? 'disabled:bg-gray-500' : 'bg-[#1B263B]'}
                                     `}
-                                    disabled={!project.liveUrl}
+                                disabled={!project.liveUrl}
+                                aria-label="Ver site em produção"
                             >
                                 <Icon path={mdiLinkPlus} size={1} />
-                                Demo
+                                Ver site
                             </Button>
                         </Link>
 
@@ -152,7 +153,8 @@ export default function Card({ project }: { project: ProjectProps }) {
                                             flex justify-center items-center gap-2 w-full py-2 px-2 rounded-xl
                                             ${project.repoUrl ? 'disabled:bg-gray-500' : 'bg-[#000000]'}
                                         `}
-                                        disabled={!project.repoUrl}
+                                    disabled={!project.repoUrl}
+                                    aria-label="Ver projetos no GitHub"
                                     >
                                     <Icon path={mdiGithub} size={1} />
                                     Github
@@ -167,6 +169,7 @@ export default function Card({ project }: { project: ProjectProps }) {
                                                 ${project.repoUrl ? 'disabled:bg-gray-500' : 'bg-[#4361EE]'}
                                             `}
                                     disabled={!project.repoUrl}
+                                    aria-label="Ver layout no Figma"
                                 >
                                     <SiFigma size={24} style={{ strokeWidth: "1px" }} />
                                     Figma
@@ -181,6 +184,7 @@ export default function Card({ project }: { project: ProjectProps }) {
                                 flex justify-center items-center gap-2 w-full py-2 px-2 rounded-xl
                                 ${project.content === "" ? 'disabled:bg-gray-500' : 'bg-[#10B981]'}
                             `}
+                        aria-label="Ver detalhes"
                     >
                         <MdOutlinePageview size={24} color="#EDF3FF" />
                         Ver detalhes

@@ -8,7 +8,7 @@ import Link from "next/link";
 
 export default function Header() {
     return (
-        <header className="fixed top-0 z-50 flex justify-between items-center bg-white w-full h-auto px-6 lg:px-12 py-4 border-b border-black/5">
+        <header className="fixed top-0 z-50 flex justify-between items-center bg-white w-full h-auto px-6 lg:px-12 py-1 border-b border-black/5">
             <Link href={'/'} className="flex gap-2 items-center">
 
                 <div className="relative w-10 h-18.5">
