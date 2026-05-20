@@ -10,6 +10,9 @@ import TipoServico from "@/components/Sections/TipoServico/TipoServico";
 import { getProjects } from "@/lib/projects";
 import FAQ from "@/components/Sections/FAQ/Faq";
 
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 export default async function Home() {
   const projects = await getProjects();
 
