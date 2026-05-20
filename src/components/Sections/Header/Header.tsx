@@ -10,15 +10,6 @@ export default function Header() {
     return (
         <header className="fixed top-0 z-50 flex justify-between items-center bg-white w-full h-auto px-6 lg:px-12 py-4 border-b border-black/5">
             <Link href={'/'} className="flex gap-2 items-center">
-                {/*<Image
-                    src={'/logo_gabriel_identy.svg'}
-                    alt="gabriel miranda"
-                    width={40}
-                    height={74}
-                    className="h-auto"
-                    priority
-                />*/}
-
                 <Image
                     src={'/logo.svg'}
                     alt="gabriel miranda"

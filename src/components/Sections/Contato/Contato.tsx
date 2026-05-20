@@ -1,7 +1,7 @@
 'use client'
 
 import Button from "@/components/Custom/Button";
-import { ShieldCheck, Send } from "lucide-react";
+import { User, Mail, Phone, Send } from "lucide-react";
 import { useState } from "react";
 
 export default function Contact() {
@@ -88,34 +88,42 @@ export default function Contact() {
                 className="flex flex-col gap-6 p-3 md:p-6 lg:p-6"
             >
 
-                <fieldset className="flex flex-col gap-4 bg-[#EDF3FF] rounded-[14px] p-6 shadow-2xs">
+                <fieldset className="flex flex-col gap-4 bg-[#EDF3FF] rounded-xl p-6 shadow-2xs">
                     <div className="flex flex-col gap-2 lg:gap-4 w-full md:flex-row">
                         <div className="flex flex-col gap-2 w-full">
                             <label className="text-[#1B263B] text-body-default font-medium">
                                 Nome completo <b className="text-[#EF4444]">*</b>
                             </label>
-                            <input
-                                type="text"
-                                name="name"
-                                value={form.name}
-                                onChange={handleChange}
-                                placeholder="Seu nome"
-                                className="p-3 bg-white rounded-[14px] text-[#1B263B] text-body-default font-normal autofill:shadow-[0_0_0_30px_#ffffff_inset]"
-                            />
+
+                            <div className="flex items-center bg-white rounded-xl px-2">
+                                <User size={24} strokeWidth={1.5} color="#5E6472"/>
+                                <input
+                                    type="text"
+                                    name="name"
+                                    value={form.name}
+                                    onChange={handleChange}
+                                    placeholder="Seu nome"
+                                    className="p-3 bg-white rounded-xl text-[#1B263B] text-body-default font-normal autofill:shadow-[0_0_0_30px_#ffffff_inset]"
+                                />
+                            </div>
                         </div>
 
                         <div className="flex flex-col gap-2 w-full">
                             <label className="text-[#1B263B] text-body-default font-medium">
                                 E-mail <b className="text-[#EF4444] text-body-default font-medium">*</b>
                             </label>
-                            <input
-                                type="email"
-                                name="email"
-                                value={form.email}
-                                onChange={handleChange}
-                                placeholder="Seu e-mail"
-                                className="p-3 bg-white rounded-[14px] text-[#1B263B] text-body-default font-normal autofill:shadow-[0_0_0_30px_#ffffff_inset]"
-                            />
+
+                            <div className="flex items-center bg-white rounded-xl px-2">
+                                <Mail size={24} strokeWidth={1.5} color="#5E6472"/>
+                                <input
+                                    type="email"
+                                    name="email"
+                                    value={form.email}
+                                    onChange={handleChange}
+                                    placeholder="seu@email.com"
+                                    className="p-3 bg-white rounded-xl text-[#1B263B] text-body-default font-normal autofill:shadow-[0_0_0_30px_#ffffff_inset]"
+                                />
+                            </div>
                         </div>
                     </div>
 
@@ -123,14 +131,18 @@ export default function Contact() {
                         <label className="text-[#1B263B] text-body-default font-medium">
                             Whatsapp <b className="text-[#EF4444] text-body-default font-medium">*</b>
                         </label>
-                        <input
-                            type="text"
-                            name="whatsapp"
-                            value={form.whatsapp}
-                            onChange={handleChange}
-                            placeholder="Whatsapp"
-                            className="p-3 bg-white rounded-[14px] text-[#1B263B] text-body-default font-normal autofill:shadow-[0_0_0_30px_#ffffff_inset]"
-                        />
+
+                        <div className="flex items-center bg-white rounded-xl px-2">
+                            <Phone size={24} strokeWidth={1.5} color="#5E6472"/>
+                            <input
+                                type="text"
+                                name="whatsapp"
+                                value={form.whatsapp}
+                                onChange={handleChange}
+                                placeholder="(11) 99999-9999"
+                                className="p-3 bg-white rounded-xl text-[#1B263B] text-body-default font-normal autofill:shadow-[0_0_0_30px_#ffffff_inset]"
+                            />
+                        </div>
                     </div>
 
                     <div className="flex flex-col gap-2">
@@ -143,7 +155,7 @@ export default function Contact() {
                             onChange={handleChange}
                             placeholder="Descreva sua dúvida..."
                             className="
-                                p-3 bg-white rounded-[14px] text-[#1B263B] text-body-default font-normal 
+                                p-3 bg-white rounded-xl text-[#1B263B] text-body-default font-normal 
                                 h-25 lg:h-50 resize-none focus:border-none autofill:shadow-[0_0_0_30px_#ffffff_inset]
                             "
                         />
@@ -154,7 +166,7 @@ export default function Contact() {
                         type="submit"
                         disabled={isDisabled || status.type === "loading"}
                         className={`
-                            px-6 py-4 rounded-[14px] w-full disabled:bg-[#5E6472] disabled:text-[#f9fafb] ]
+                            px-6 py-4 rounded-xl w-full disabled:bg-[#5E6472] disabled:text-[#f9fafb] ]
                             disabled:border-0 disabled:hover:brightness-100 disabled:bg-none flex gap-2 justify-center items-center
                         `}
                     >
