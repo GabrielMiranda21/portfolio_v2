@@ -9,7 +9,7 @@ const cards = [
     subtitle: 'UX/UI focado em produtos digitais',
     accent: 'from-[#8E24AA] to-[#c47de8]',
     dot: '#c47de8',
-    bg: '#12003a',
+    bg: '#441259',
     border: 'border-r border-white/[0.08]',
     services: [
       'Design de landing page',
@@ -40,7 +40,7 @@ const cards = [
     subtitle: 'Interfaces performáticas para web',
     accent: 'from-[#3949AB] to-[#7b8ff0]',
     dot: '#7b8ff0',
-    bg: '#0d1a5c',
+    bg: '#1e1f48',
     border: 'border-r border-white/[0.08]',
     services: [
       'Landing page responsiva',
@@ -68,7 +68,7 @@ const cards = [
     subtitle: 'Design e desenvolvimento integrados',
     accent: 'from-[#00ACC1] to-[#45d9f5]',
     dot: '#45d9f5',
-    bg: '#003848',
+    bg: '#093043',
     border: '',
     services: [
       'MVP do conceito ao código',

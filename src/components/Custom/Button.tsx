@@ -4,7 +4,7 @@ import { IconProps } from "@mdi/react/dist/IconProps";
 type ButtonVariantBackgroundColor = 'cta' | 'primary' | 'secundary' | 'terciary' | 'brand' | 'black' | 'surface' | 'none';
 
 const buttonColors:Record<string, string>  = {
-    cta: "bg-gradient-to-r from-[#4361EE] via-[#7b8ff0] to-[#45d9f5] text-[#EDF3FF] transition-transform hover:scale-115 shadow-2xs",
+    cta: "bg-gradient-to-r from-[#C47DE8] via-[#7B8FF0] to-[#45D9F5] text-[#EDF3FF] transition-transform hover:scale-115 shadow-2xs",
     primary: "bg-[#1B263B] text-[#EDF3FF] hover:brightness-110 hover:saturate-110",
     secundary: "bg-[#3B82F6] text-[#EDF3FF] hover:brightness-110 hover:saturate-110",
     terciary: "bg-[#10B981] text-[#EDF3FF] hover:brightness-110 hover:saturate-110 transition-transform  hover:scale-105",
