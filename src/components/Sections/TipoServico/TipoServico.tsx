@@ -12,11 +12,10 @@ const cards = [
     bg: '#441259',
     border: 'border-r border-white/[0.08]',
     services: [
-      'Design de landing page',
-      'Dashboard e painel admin',
-      'Fluxo e experiência do produto',
+      'Landing page UI',
       'Design System',
       'Protótipos no Figma',
+      'Dashboard e painel admin UI'
     ],
     roll: 'Projeto experiências digitais',
     art: (
@@ -45,9 +44,7 @@ const cards = [
     services: [
       'Landing page responsiva',
       'Portfólio profissional',
-      'E-commerce front-end',
-      'Blog e sites institucionais',
-      'PWA e interfaces web',
+      'Blog e sites institucionais'
     ],
     roll: 'Construo interfaces funcionais',
     art: (
@@ -71,11 +68,9 @@ const cards = [
     bg: '#093043',
     border: '',
     services: [
-      'MVP do conceito ao código',
-      'Produto ponta a ponta',
       'Redesign com implementação',
       'Design System em código',
-      'UX alinhada ao desenvolvimento',
+      'MVP do conceito ao código'
     ],
     roll: 'Uno design e desenvolvimento',
     art: (
