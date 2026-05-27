@@ -36,7 +36,7 @@ const Menu:MenuItem[] = [
 
 export default function ComoTrabalho(){
     return (
-        <section id="comoTrabalho" className="flex flex-col gap-6 py-28 px-6 bg-[linear-gradient(90deg,#1E1F48_0%,#4F52DC_100%)] text-center">
+        <section id="comoTrabalho" className="flex flex-col gap-6 py-28 px-6 lg:px-16 bg-[linear-gradient(90deg,#1E1F48_0%,#4F52DC_100%)] text-center">
             <h2 className="font-montserrat text-h2 font-extrabold text-white">Como trabalho</h2>
             <p className="font-poppins text-body-default font-normal text-white/70">Busco entender o problema, estruturar a experiência e desenvolver soluções digitais de forma clara e organizada.</p>
             <div className="grid grid-cols-1 md:grid-cols-2 min-[1300px]:flex min-[1300px]:justify-between gap-6 w-full h-auto">
