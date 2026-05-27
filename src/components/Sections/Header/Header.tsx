@@ -14,7 +14,7 @@ export default function Header() {
 
                 <div className="relative w-10 h-[74px]">
                     <Image
-                        src={logo}
+                        src={'/logo.svg'}
                         alt="gabriel miranda"
                         fill
                         priority
