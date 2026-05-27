@@ -5,18 +5,20 @@ import DesktopMenu from "./DesktopMenu";
 
 import Image from "next/image";
 import Link from "next/link";
+import logo from '@/public/logo.svg';
 
 export default function Header() {
     return (
         <header className="fixed top-0 z-50 flex justify-between items-center bg-white w-full h-auto px-6 lg:px-12 py-1 border-b border-black/5">
-            <Link href={'/'} className="flex gap-2 items-center">
+            <Link href={'/'} className="flex gap-2 items-center" as="image">
 
-                <div className="relative w-10 h-18.5">
+                <div className="relative w-10 h-[74px]">
                     <Image
-                        src={'/logo.svg'}
+                        src={logo}
                         alt="gabriel miranda"
                         fill
                         priority
+                        className="object-contain"
                     />
                 </div>
                 

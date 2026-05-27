@@ -6,13 +6,14 @@ import Image from "next/image"
 
 import ReactMarkDown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { useRef, useState, useEffect, use } from "react";
+import { useRef, useState, useEffect } from "react";
 import { ProjectProps } from "@/lib/projects";
 import Link from "next/link";
 import { createPortal } from "react-dom";
 
 import Icon from "@mdi/react";
-import { mdiLinkPlus, mdiGithub, mdiClose } from "@mdi/js";
+import { mdiGithub } from "@mdi/js";
+import { Eye, X } from "lucide-react"
 import { SiFigma } from 'react-icons/si'
 import { MdOutlinePageview } from "react-icons/md";
 
@@ -79,7 +80,7 @@ export default function Card({ project }: { project: ProjectProps }) {
                                 onClick={closeModal}
                                 className="p-2 hover:bg-gray-100 rounded-full transition-colors z-50 cursor-pointer mr-8"
                             >
-                                <Icon path={mdiClose} size={1.5} color={"#5E6472"} />
+                                <X size={24} strokeWidth={1.5} color={"#5E6472"} />
                             </button>
                         </div>
 
@@ -130,20 +131,37 @@ export default function Card({ project }: { project: ProjectProps }) {
                 </div>
                 <div className="flex flex-wrap gap-2 justify-between h-auto">
                     <div className="flex w-full gap-2">
-                        <Link href={project.liveUrl || ""} target="_blank" className="w-full">
-                            <Button
-                                variant={'primary'}
-                                className={`
+                        {project.category === 'Web' ? (
+                            <Link href={project.liveUrl || ""} target="_blank" className="w-full">
+                                <Button
+                                    variant={'primary'}
+                                    className={`
                                         flex justify-center items-center gap-2 w-full py-2 px-2 rounded-xl
                                         ${project.liveUrl ? 'disabled:bg-gray-500' : 'bg-[#1B263B]'}
                                     `}
-                                disabled={!project.liveUrl}
-                                aria-label="Ver site em produção"
-                            >
-                                <Icon path={mdiLinkPlus} size={1} />
-                                Ver site
-                            </Button>
-                        </Link>
+                                    disabled={!project.liveUrl}
+                                    aria-label="Ver site em produção"
+                                >
+                                    <Eye size={24} strokeWidth={1.5} color="#ffffff" />
+                                    Ver site
+                                </Button>
+                            </Link>
+                        ) : (
+                            <Link href={project.repoUrl || ""} target="_blank" className="w-full">
+                                <Button
+                                    variant={'primary'}
+                                    className={`
+                                        flex justify-center items-center gap-2 w-full py-2 px-2 rounded-xl
+                                        ${project.liveUrl ? 'disabled:bg-gray-500' : 'bg-[#1B263B]'}
+                                    `}
+                                    disabled={!project.liveUrl}
+                                    aria-label="Ver site em produção"
+                                >
+                                    <Eye size={24} strokeWidth={1.5} color="#ffffff" />
+                                    Testar
+                                </Button>
+                            </Link>
+                        )}
 
                         {project.category === 'Web' ? (
                             <Link href={project.repoUrl || ""} target="_blank" className="w-full">
@@ -155,7 +173,7 @@ export default function Card({ project }: { project: ProjectProps }) {
                                         `}
                                     disabled={!project.repoUrl}
                                     aria-label="Ver projetos no GitHub"
-                                    >
+                                >
                                     <Icon path={mdiGithub} size={1} />
                                     Github
                                 </Button>
