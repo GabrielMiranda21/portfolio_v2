@@ -25,7 +25,6 @@ export default function Button({variant, children, icon, iconProps, className, .
         className={`text-body-default font-bold text-center cursor-pointer ${buttonColors[variant]} ${className || ""}`}
         {...props}
     >
-        {/*Renderização Condicional*/}
         {icon && <Icon path={icon} size={1} />}
         {children}
     </button>

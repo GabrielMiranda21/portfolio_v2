@@ -151,7 +151,7 @@ export default function FAQ() {
               style={activeTab === tab.key
                 ? { background: 'linear-gradient(90deg, #4361EE, #7b8ff0)' }
                 : {}
-              }
+              } 
             >
               {tab.label}
             </button>
